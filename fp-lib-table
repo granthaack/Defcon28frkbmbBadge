@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name frkbmb)(type KiCad)(uri /home/ghaack/projects/ForkbombDefcon28Badge/frkbmb.pretty)(options "")(descr "frkbmb Library"))
+)
