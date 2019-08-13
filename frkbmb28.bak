@@ -2408,7 +2408,7 @@ Wire Wire Line
 	2750 1800 2750 13550
 Connection ~ 2750 3650
 Wire Wire Line
-	3450 1800 3450 8150
+	3450 1800 3450 13550
 Connection ~ 3450 3650
 Wire Wire Line
 	4150 1800 4150 13550
@@ -2783,8 +2783,6 @@ Connection ~ 4450 8350
 Connection ~ 3750 8350
 Connection ~ 3050 8350
 Connection ~ 2750 8150
-Wire Wire Line
-	3450 8200 3450 13550
 Connection ~ 4150 8150
 Connection ~ 4850 8150
 Connection ~ 5550 8150
@@ -3028,8 +3026,6 @@ Connection ~ 5150 12450
 Connection ~ 4450 12450
 Connection ~ 3750 12450
 Connection ~ 3050 12450
-Wire Wire Line
-	7950 12600 7950 12700
 Wire Wire Line
 	2350 12600 7950 12600
 Wire Wire Line
@@ -3658,4 +3654,7 @@ Wire Wire Line
 	3450 12650 3450 12650
 Wire Wire Line
 	4150 9950 4150 12650
+Connection ~ 3450 8150
+Wire Wire Line
+	7950 12600 7950 12650
 $EndSCHEMATC

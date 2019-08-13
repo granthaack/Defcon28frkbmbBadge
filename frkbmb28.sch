@@ -3657,4 +3657,10 @@ Wire Wire Line
 Connection ~ 3450 8150
 Wire Wire Line
 	7950 12600 7950 12650
+Wire Wire Line
+	1750 11550 1900 11550
+Wire Wire Line
+	1750 11750 1900 11750
+Wire Wire Line
+	1750 11950 1900 11950
 $EndSCHEMATC
