@@ -1,6 +1,6 @@
-(module LIS2HH12 (layer F.Cu) (tedit 0)
+(module LIS2HH12-NEW (layer F.Cu) (tedit 5D5513A3)
   (attr smd)
-  (fp_text reference PQFN50P200X200X100-12N (at -0.1518 -1.91055) (layer F.SilkS)
+  (fp_text reference LIS2HH12 (at 0 -2) (layer F.SilkS)
     (effects (font (size 0.805906 0.805906) (thickness 0.05)))
   )
   (fp_text value VAL** (at 0.361275 1.88585) (layer F.SilkS)
