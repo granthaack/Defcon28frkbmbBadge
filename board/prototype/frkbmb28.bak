@@ -161,7 +161,7 @@ F 3 "" H 2200 8150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 1950 8550 2    60   ~ 0
-SAO/SDO
+SAO_SDO
 Text Label 1950 8650 2    60   ~ 0
 CS
 Text Label 2850 8750 2    60   ~ 0
@@ -236,7 +236,7 @@ SDA_ACC
 Text Label 3100 11550 2    60   ~ 0
 SCL_ACC
 Text Label 3100 11650 2    60   ~ 0
-SA0/SDo
+SA0_SDO
 Text Label 3100 11750 2    60   ~ 0
 CS
 Text Label 3100 11850 2    60   ~ 0
@@ -3047,4 +3047,50 @@ Connection ~ 8800 4400
 Connection ~ 8800 4900
 Text Label 3100 11350 2    60   ~ 0
 AUD
+Wire Wire Line
+	3950 1800 4150 1800
+Wire Wire Line
+	3950 1900 4150 1900
+Wire Wire Line
+	3950 2000 4150 2000
+Wire Wire Line
+	3950 2100 4150 2100
+Wire Wire Line
+	3950 2200 4150 2200
+Wire Wire Line
+	3950 2300 4150 2300
+Wire Wire Line
+	3950 2400 4150 2400
+Wire Wire Line
+	3950 2500 4150 2500
+Wire Wire Line
+	3950 2600 4150 2600
+Connection ~ 4150 1800
+Connection ~ 4150 1900
+Connection ~ 4150 2000
+Connection ~ 4150 2100
+Connection ~ 4150 2200
+Connection ~ 4150 2300
+Connection ~ 4150 2400
+Connection ~ 4150 2500
+Connection ~ 4150 2600
+Text Label 4150 1800 0    60   ~ 0
+CB9
+Text Label 4150 1900 0    60   ~ 0
+CB8
+Text Label 4150 2000 0    60   ~ 0
+CB7
+Text Label 4150 2100 0    60   ~ 0
+CB6
+Text Label 4150 2200 0    60   ~ 0
+CB5
+Text Label 4150 2300 0    60   ~ 0
+CB4
+Text Label 4150 2400 0    60   ~ 0
+CB3
+Text Label 4150 2500 0    60   ~ 0
+CB2
+Text Label 4150 2600 0    60   ~ 0
+CB1
+Connection ~ 1200 1750
 $EndSCHEMATC
