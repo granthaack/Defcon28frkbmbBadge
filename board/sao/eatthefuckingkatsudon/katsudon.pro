@@ -1,5 +1,5 @@
 
-update=2018 March 15, Thursday 14:41:19
+update=Sun 08 Sep 2019 01:43:27 AM PDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
+LibName30=katsudon

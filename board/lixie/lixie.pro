@@ -1,5 +1,4 @@
-
-update=Sun 22 Sep 2019 12:09:57 AM PDT
+update=Wed 15 Jan 2020 09:01:43 PM PST
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +58,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=punchuko
+LibName30=lixie
+LibName31=/home/ghaack/projects/Defcon28frkbmbBadge/board/prototype/frkbmb28-cache
