@@ -38,7 +38,7 @@
 #define MAX_TOKENS 		3
 
 //Tokenized values
-//All the different actions the player can take
+//Actions
 #define TOKEN_NULL		0x00
 #define ACT_GO 			0x01
 #define ACT_USE 		0x02
@@ -60,12 +60,16 @@
 //Turn directions
 #define TURND_LEFT		0x10
 #define TURND_RIGHT		0x11
+
 //Objects, start at 0x20
 #define OBJ_TEST		0x20
-//Items, start at 0x50
-#define ITM_TEST		0x50
-//Commands, start at 0x70
-#define CMD_TEST		0x70
+
+//Items, start at 0x70
+#define ITM_TEST		0x70
+
+//Commands, start at 0xB0
+#define CMD_TEST		0xB0
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
