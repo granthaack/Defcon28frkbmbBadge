@@ -106,7 +106,7 @@ extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
 uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 
 /* USER CODE BEGIN EXPORTED_FUNCTIONS */
-uint8_t* GetUserDataBuf();
+char* GetUserDataBuf();
 uint8_t GetUserDataSize();
 void ClearUserDataBuf();
 uint8_t CheckUserDataReady();

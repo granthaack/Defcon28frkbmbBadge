@@ -103,7 +103,7 @@ uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
 //Buffer for user entered data
-uint8_t UserData[256];
+char UserData[256];
 //Index of the current byte in UserData
 uint8_t UserDataIndex = 0;
 /* USER CODE END PRIVATE_VARIABLES */
@@ -332,7 +332,7 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 }
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
-uint8_t* GetUserDataBuf(){
+char* GetUserDataBuf(){
 	return UserData;
 }
 

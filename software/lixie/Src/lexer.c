@@ -3,7 +3,7 @@
 //Lexically analyze the user input
 //Return 0xFF and set global vars if fully understood
 //Else, return the index of the first character of the not understood word
-uint8_t Tokenize_User_Input(uint8_t *buf, uint8_t len){
+uint8_t Tokenize_User_Input(char *buf, uint8_t len){
 	memset(game_tokens, TOKEN_NULL, MAX_TOKENS);
 	uint8_t buf_index = 0;
 	uint8_t token_count = 0;
@@ -91,6 +91,14 @@ uint8_t Tokenize_User_Input(uint8_t *buf, uint8_t len){
 		else if(!strncmp(&buf[buf_index], "help", 4)){
 			game_tokens[token_count] = ACT_HELP;
 			buf_index = buf_index + 5;
+		}
+		else if(!strncmp(&buf[buf_index], "inventory", 9)){
+			game_tokens[token_count] = ACT_INVENTORY;
+			buf_index = buf_index + 10;
+		}
+		else if(!strncmp(&buf[buf_index], "examine", 7)){
+			game_tokens[token_count] = ACT_EXAMINE;
+			buf_index = buf_index + 8;
 		}
 		else{
 			return buf_index;
