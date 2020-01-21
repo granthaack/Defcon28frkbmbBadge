@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000028  00000000  00000000  00020178  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00013976  00000000  00000000  000201a0  2**0
+ 12 .debug_info   00014233  00000000  00000000  000201a0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00002f13  00000000  00000000  00033b16  2**0
+ 13 .debug_abbrev 00003078  00000000  00000000  000343d3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00000de0  00000000  00000000  00036a30  2**3
+ 14 .debug_aranges 00000df8  00000000  00000000  00037450  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000c78  00000000  00000000  00037810  2**3
+ 15 .debug_ranges 00000c80  00000000  00000000  00038248  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  000168d4  00000000  00000000  00038488  2**0
+ 16 .debug_macro  00016ad8  00000000  00000000  00038ec8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000e0e0  00000000  00000000  0004ed5c  2**0
+ 17 .debug_line   0000e64e  00000000  00000000  0004f9a0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0007cc76  00000000  00000000  0005ce3c  2**0
+ 18 .debug_str    0007cc85  00000000  00000000  0005dfee  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  000d9ab2  2**0
+ 19 .comment      0000007b  00000000  00000000  000dac73  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003020  00000000  00000000  000d9b30  2**2
+ 20 .debug_frame  00003030  00000000  00000000  000dacf0  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -14582,8 +14582,8 @@ USBD_StatusTypeDef USBD_CtlReceiveStatus (USBD_HandleTypeDef *pdev)
  8005436:	bd80      	pop	{r7, pc}
 
 08005438 <Tokenize_User_Input>:
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
+#include "lexer.h"
+
 //Lexically analyze the user input
 //Return 0xFF and set global vars if fully understood
 //Else, return the index of the first character of the not understood word
@@ -15095,7 +15095,7 @@ uint8_t Tokenize_User_Input(uint8_t *buf, uint8_t len){
  80057e2:	18fb      	adds	r3, r7, r3
  80057e4:	781b      	ldrb	r3, [r3, #0]
  80057e6:	4a46      	ldr	r2, [pc, #280]	; (8005900 <Tokenize_User_Input+0x4c8>)
- 80057e8:	2150      	movs	r1, #80	; 0x50
+ 80057e8:	2170      	movs	r1, #112	; 0x70
  80057ea:	54d1      	strb	r1, [r2, r3]
 			buf_index = buf_index + 8;
  80057ec:	220f      	movs	r2, #15
@@ -15123,7 +15123,7 @@ uint8_t Tokenize_User_Input(uint8_t *buf, uint8_t len){
  8005814:	18fb      	adds	r3, r7, r3
  8005816:	781b      	ldrb	r3, [r3, #0]
  8005818:	4a39      	ldr	r2, [pc, #228]	; (8005900 <Tokenize_User_Input+0x4c8>)
- 800581a:	2170      	movs	r1, #112	; 0x70
+ 800581a:	21b0      	movs	r1, #176	; 0xb0
  800581c:	54d1      	strb	r1, [r2, r3]
 			buf_index = buf_index + 12;
  800581e:	220f      	movs	r2, #15
