@@ -6,7 +6,8 @@
 #include "string.h"
 #include "lexer.h"
 
-
+//The amount of objects in the game
+#define OBJECT_COUNT 1
 //Object States
 //Null
 #define OBJ_NULL 		0x00

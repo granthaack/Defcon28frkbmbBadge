@@ -7,8 +7,15 @@
 #include "objects.h"
 
 //The number of game rooms
-#define ROOM_COUNT 7
-//TODO: Define all the room tokens
+#define ROOM_COUNT 			7
+//Room Tokens
+#define RTKN_TESTSTART		0x01
+#define RTKN_TESTNORTH		0x02
+#define RTKN_TESTEAST		0x03
+#define RTKN_TESTSOUTH		0x04
+#define RTKN_TESTWEST		0x05
+#define RTKN_TESTDOWN		0x06
+#define RTKN_TESTUP			0x07
 
 //Room Struct
 struct room {

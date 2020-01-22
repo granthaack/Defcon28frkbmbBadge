@@ -8,14 +8,12 @@ const char obj_testobj_seen[] = "To the left is a TESTOBJ. Looks like something 
 const char obj_testobj_examine[] = "It looks like a test object. Use a TESTITM on it";
 //Game objects
 struct obj obj_testobject;
-//The amount of objects in the game
-#define OBJECT_COUNT 1
 //Array of all the game objects
 struct obj* game_objs[OBJECT_COUNT];
 
 
 void InitObjs(){
-	obj_testobject.token = OBJ_TEST;
+	obj_testobject.token = LTKN_OBJ_TEST;
 	obj_testobject.state = OBJ_UNTOUCHED;
 	obj_testobject.name = obj_testobject_name;
 	obj_testobject.seen_text = obj_testobj_seen;

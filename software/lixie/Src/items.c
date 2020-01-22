@@ -13,9 +13,9 @@ struct itm* game_itms[ITEM_COUNT];
 
 void InitItms(){
 
-	itm_testitm.token = ITM_TEST;
+	itm_testitm.token = LTKN_ITM_TEST;
 	itm_testitm.combine_token = NULL;
-	itm_testitm.object_token = OBJ_TEST;
+	itm_testitm.object_token = LTKN_OBJ_TEST;
 	itm_testitm.state = ITM_NOT_PICKED_UP;
 	itm_testitm.name = itm_testitem_name;
 	itm_testitm.seen_text = itm_testitm_seen;
