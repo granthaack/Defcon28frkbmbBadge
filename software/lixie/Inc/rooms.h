@@ -8,6 +8,8 @@
 
 //The number of game rooms
 #define ROOM_COUNT 7
+//TODO: Define all the room tokens
+
 //Room Struct
 struct room {
 	//Pointer to the north room
@@ -34,9 +36,12 @@ struct room {
 	uint8_t item_count;
 	//The number of objects in a room
 	uint8_t object_count;
+	//The token of the room for easy access
+	uint8_t token;
 };
 
 //Initialize all the rooms at the start of the game
 void InitRooms();
-
+//Get a room by its token
+struct room* GetRoomByToken(uint8_t token);
 #endif
