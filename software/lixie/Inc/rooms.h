@@ -1,24 +1,13 @@
+#ifndef _ROOMS_H_
+#define _ROOMS_H_
+
 #include "stdint.h"
 #include "stdio.h"
+#include "items.h"
+#include "objects.h"
 
-//Room names
-const char rm_name_teststart[] = 	"Test Start Room";
-const char rm_name_testnorth[] = 	"Test North Room";
-const char rm_name_testeast[] = 	"Test East Room";
-const char rm_name_testsouth[] = 	"Test South Room";
-const char rm_name_testwest[] = 	"Test West Room";
-const char rm_name_testdown[] =		"Test Down Room";
-const char rm_name_testup[] = 		"Test Up Room";
-
-//Room flavor text
-const char rm_flvr_teststart[] = 	"This looks like a test room.";
-const char rm_flvr_testnorth[] = 	"This room is north of the start room. It's completely blank";
-const char rm_flvr_testeast[] = 	"This room is east of the start room.";
-const char rm_flvr_testsouth[] = 	"This room is south of the start room.";
-const char rm_flvr_testwest[] = 	"This room is west of the start room. It's barren.";
-const char rm_flvr_testdown[] =		"You enter the test basement. It's spooky in here";
-const char rm_flvr_testup[] = 		"You go to the second story of the test building. There are no windows";
-
+//The number of game rooms
+#define ROOM_COUNT 7
 //Room Struct
 struct room {
 	//Pointer to the north room
@@ -37,11 +26,17 @@ struct room {
 	const char* name;
 	//Pointer to the flavortext of the room
 	const char* flavortext;
-	//Pointer to a list of items in a room
-	struct itm* items;
-	//Pointer to a list of objects in a room
-	struct itm* objects;
+	//Pointer to a list of item pointers in a room
+	struct itm** items;
+	//Pointer to a list of object pointers in a room
+	struct obj** objects;
+	//The number of items in a room
+	uint8_t item_count;
+	//The number of objects in a room
+	uint8_t object_count;
 };
 
 //Initialize all the rooms at the start of the game
 void InitRooms();
+
+#endif

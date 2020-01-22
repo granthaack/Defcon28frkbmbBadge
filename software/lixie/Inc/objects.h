@@ -1,22 +1,19 @@
+#ifndef _OBJECTS_H_
+#define _OBJECTS_H_
+
 #include "stdint.h"
 #include "stdio.h"
 #include "string.h"
 #include "lexer.h"
 
-//Object Names
-const char obj_testobject_name[] = "Test Object";
-
-//Object seen text
-const char obj_testobj_seen[] = "To the left is a TESTOBJ. Looks like something can be used on it.";
-
-//Object examine text
-const char obj_testobj_examine = "It looks like a test object. Use a TESTITM on it";
 
 //Object States
 //Null
-#define OBJ_NULL
+#define OBJ_NULL 		0x00
+//The item has not been acted upon
+#define OBJ_UNTOUCHED 	0x01
 //The object has been acted upon in the game world and is removed from play
-#define OBJ_ACTED_ON
+#define OBJ_ACTED_ON 	0x02
 
 struct obj{
 	//The token that the game logic refers to the object by
@@ -32,13 +29,11 @@ struct obj{
 	const char* examine_text;
 };
 
-//Game objects
-struct obj TestObj;
 
-//Array of game objects
-struct obj GameObjs[] = {&TestObj};
 
 //Get a game object by its token
 struct obj* GetObjByToken(uint8_t token);
 //Initialize all the objects at the start of the game
 void InitObjs();
+
+#endif

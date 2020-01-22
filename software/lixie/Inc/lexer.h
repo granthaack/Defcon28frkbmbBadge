@@ -1,3 +1,6 @@
+#ifndef _LEXER_H_
+#define _LEXER_H_
+
 #include "stdint.h"
 #include "stdio.h"
 #include "string.h"
@@ -41,10 +44,8 @@
 //Commands (0x80 to 0xAF)
 #define CMD_TEST		0x80
 
-//Rooms (0xB0 to 0xFF)
-
-
-
 uint8_t game_tokens[MAX_TOKENS];
 
 uint8_t Tokenize_User_Input(char *buf, uint8_t len);
+
+#endif

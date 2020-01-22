@@ -1,17 +1,13 @@
+#ifndef _ITEMS_H_
+#define _ITEMS_H_
+
 #include "stdint.h"
 #include "stdio.h"
 #include "string.h"
 #include "lexer.h"
 
-//Item Names
-const char itm_testitem_name[] = "Test Item";
-
-//Item seen text
-const char itm_testitm_seen[] = "There is a TESTITM lodged in the wall";
-
-//Item examine text
-const char itm_testirm_exmn[] = "It's a test item. Use it on a test object.";
-
+//The number of game items
+#define ITEM_COUNT 1
 //Item States
 //Null
 #define ITM_NULL			0x00
@@ -41,13 +37,9 @@ struct itm {
 	const char* examine_text;
 };
 
-//Game items
-struct itm TestItm;
 
-//Array of game items
-struct itm GameItms[] = {&TestItm};
-
-//Get an item by its token
-struct itm* GetItmByToken(uint8_t token);
 //Initialize all the items at the start of the game
 void InitItms();
+//Get an item by its token
+struct itm* GetItmByToken(uint8_t token);
+#endif
