@@ -104,26 +104,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  GameLoop();
     /* USER CODE BEGIN 3 */
-	  uint8_t tmp[] = "        ";
-	  uint8_t ret = 0;
-	  if(CheckUserDataReady()){
-		  ret = Tokenize_User_Input(GetUserDataBuf(), GetUserDataSize());
-		  tmp[0] = game_tokens[0] + 0x30;
-		  tmp[2] = game_tokens[1] + 0x30;
-		  tmp[4] = game_tokens[2] + 0x30;
-		  if(ret != 0xFF){
-			  tmp[6] = 'X';
-		  }
-		  else{
-			  tmp[6] = 'O';
-		  }
-		  CDC_Transmit_FS(tmp, 8);
-		  ClearUserDataBuf();
-	  }
-	  //CDC_Transmit_FS(GetUSBRxBuf(), sizeof(GetUSBRxBuf()));
-	  //CDC_Transmit_FS(buffer, sizeof(buffer));
+
   }
   /* USER CODE END 3 */
 }

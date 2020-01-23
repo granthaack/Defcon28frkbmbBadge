@@ -3,7 +3,8 @@
 //Lexically analyze the user input
 //Return 0xFF and set global vars if fully understood
 //Else, return the index of the first character of the not understood word
-uint8_t Tokenize_User_Input(char *buf, uint8_t len){
+uint8_t TokenizeUserInput(char *buf, uint8_t len){
+	//Clear the tokens
 	memset(game_tokens, LTKN_TOKEN_NULL, MAX_TOKENS);
 	uint8_t buf_index = 0;
 	uint8_t token_count = 0;
