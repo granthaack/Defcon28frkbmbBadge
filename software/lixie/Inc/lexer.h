@@ -48,5 +48,4 @@ uint8_t game_tokens[MAX_TOKENS];
 
 //Take input from a user and turn it into tokens
 uint8_t TokenizeUserInput(char *buf, uint8_t len);
-
 #endif

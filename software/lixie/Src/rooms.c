@@ -1,4 +1,5 @@
 #include "rooms.h"
+#include "usbd_cdc_if.h"
 
 //Array of pointers to all the game rooms
 struct room* game_rooms[ROOM_COUNT];
@@ -151,4 +152,3 @@ struct room* GetRoomByToken(uint8_t token){
 	}
 	return NULL;
 }
-

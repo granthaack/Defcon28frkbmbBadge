@@ -1,3 +1,5 @@
-game.c:12:6:InitGame	8	static
-game.c:19:6:PrintBadInput	88	static
-game.c:35:6:GameLoop	40	static
+game.c:15:6:InitGame	8	static
+game.c:24:6:PrintBadInput	24	static
+game.c:39:6:GameLoop	40	static
+game.c:66:6:PrintLocation	8	static
+game.c:70:6:MovePlayer	8	static

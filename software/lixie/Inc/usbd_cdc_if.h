@@ -49,7 +49,7 @@
   * @{
   */
 /* USER CODE BEGIN EXPORTED_DEFINES */
-
+#define APP_TX_DATA_SIZE  512
 /* USER CODE END EXPORTED_DEFINES */
 
 /**
@@ -91,7 +91,7 @@
 extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
-
+uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 /* USER CODE END EXPORTED_VARIABLES */
 
 /**
@@ -106,9 +106,12 @@ extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
 uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 
 /* USER CODE BEGIN EXPORTED_FUNCTIONS */
+void PrintToConsole(const char* c, uint16_t size);
+void PrintStrToConsole(char* c);
 char* GetUserDataBuf();
 uint8_t GetUserDataSize();
 void ClearUserDataBuf();
+void ClearTxBuffer();
 uint8_t CheckUserDataReady();
 void DisableLocalEcho();
 void EnableLocalEcho();

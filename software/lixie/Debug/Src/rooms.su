@@ -1,2 +1,2 @@
-rooms.c:35:6:InitRooms	8	static
-rooms.c:146:14:GetRoomByToken	24	static
+rooms.c:36:6:InitRooms	8	static
+rooms.c:147:14:GetRoomByToken	24	static

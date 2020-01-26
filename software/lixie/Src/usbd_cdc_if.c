@@ -68,8 +68,8 @@ volatile uint8_t UserDataReady = 0;
 /* USER CODE BEGIN PRIVATE_DEFINES */
 /* Define size for the receive and transmit buffer over CDC */
 /* It's up to user to redefine and/or remove those define */
-#define APP_RX_DATA_SIZE  1
-#define APP_TX_DATA_SIZE  1
+#define APP_RX_DATA_SIZE  	1
+#define USER_DATA_SIZE  	256
 /* USER CODE END PRIVATE_DEFINES */
 
 /**
@@ -97,9 +97,8 @@ volatile uint8_t UserDataReady = 0;
 /* It's up to user to redefine and/or remove those define */
 /** Received data over USB are stored in this buffer      */
 uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
-
 /** Data to send over USB CDC are stored in this buffer   */
-uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
+
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
 //Buffer for user entered data
@@ -164,7 +163,7 @@ static int8_t CDC_Init_FS(void)
   /* Set Application Buffers */
   USBD_CDC_SetTxBuffer(&hUsbDeviceFS, UserTxBufferFS, 0);
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, UserRxBufferFS);
-  memset(UserData, '\0', sizeof(UserData));
+  memset(UserData, '\0', USER_DATA_SIZE);
   return (USBD_OK);
   /* USER CODE END 3 */
 }
@@ -297,7 +296,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 		  UserDataIndex++;
 	  }
 	  else{
-		  memset(UserData, '\0', sizeof(UserData));
+		  memset(UserData, '\0', USER_DATA_SIZE);
 		  UserDataIndex = 0;
 	  }
   }
@@ -337,9 +336,25 @@ char* GetUserDataBuf(){
 }
 
 void ClearUserDataBuf(){
-	memset(UserData, '\0', sizeof(UserData));
+	memset(UserData, '\0', USER_DATA_SIZE);
 	UserDataIndex = 0;
 	UserDataReady = 0;
+}
+
+void ClearTxBuffer(){
+	memset(UserTxBufferFS, '\0', APP_TX_DATA_SIZE);
+}
+
+void PrintToConsole(const char* c, uint16_t size){
+	ClearTxBuffer();
+	uint16_t i = 0;
+	while(i < size && i < APP_TX_DATA_SIZE - 3){
+		UserTxBufferFS[i] = c[i];
+		i++;
+	}
+	UserTxBufferFS[i + 1] = '\r';
+	UserTxBufferFS[i + 2] = '\n';
+	CDC_Transmit_FS(UserTxBufferFS, i + 3);
 }
 
 uint8_t CheckUserDataReady(){
@@ -354,6 +369,18 @@ void EnableLocalEcho(){
 
 uint8_t GetUserDataSize(){
 	return UserDataIndex;
+}
+
+void PrintStrToConsole(char* c){
+	ClearTxBuffer();
+	uint8_t i = 0;
+	while(i < APP_TX_DATA_SIZE-3 && c[i] != '\0'){
+		UserTxBufferFS[i] = c[i];
+		i++;
+	}
+	UserTxBufferFS[i + 1] = '\r';
+	UserTxBufferFS[i + 2] = '\n';
+	CDC_Transmit_FS(UserTxBufferFS, i + 3);
 }
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 

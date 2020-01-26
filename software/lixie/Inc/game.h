@@ -15,4 +15,32 @@ void SetCurrentRoom(struct room* new_current_room);
 //Get the current room the player is in
 struct room* GetCurrentRoom();
 
+//Move the player
+void MovePlayer();
+//Use an item
+void UseItem();
+//Push an object
+void PushObject();
+//Pull an object
+void PullObject();
+//Turn an object
+void TurnObject();
+//Print current location of the player location
+void PrintLocation();
+//Say a command
+void SayCommand();
+//Get an item
+void GetItem();
+//Mix two items();
+void MixItems();
+//Print the help dialogue
+void PrintHelp();
+//Show the player inventory
+void Inventory();
+//Examine an object
+void ExamineObject();
+
+//All the game states
+#define GSTATE_NULL			0x00
+#define GSTATE_MOVING		0x01
 #endif
