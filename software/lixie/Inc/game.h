@@ -31,12 +31,17 @@ void PrintLocation();
 void SayCommand();
 //Get an item
 void GetItem();
+//Use an item();
+void UseItem();
+void UseItemStateMachine();
 //Mix two items();
 void MixItems();
 //Print the help dialogue
 void PrintHelp();
 //Show the player inventory
-void Inventory();
+void PrintInventory();
+//Examine an item in the players inventory
+void ExamineItem();
 //Examine an object
 void ExamineObject();
 

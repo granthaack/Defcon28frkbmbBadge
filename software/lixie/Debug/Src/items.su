@@ -1,2 +1,2 @@
-items.c:14:6:InitItms	8	static
-items.c:26:13:GetItmByToken	24	static
+items.c:12:6:InitItms	8	static
+items.c:24:13:GetItmByToken	24	static

@@ -17,6 +17,9 @@
 #define RTKN_TESTDOWN		0x06
 #define RTKN_TESTUP			0x07
 
+//Flavor text for events
+static const char rm_flvr_teststart_up_unlocked[] = 	"It's the same old test room. A trapdoor has opened in the ceiling.";
+
 //Room Struct
 struct room {
 	//Pointer to the north room

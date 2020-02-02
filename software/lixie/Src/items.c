@@ -8,8 +8,6 @@ const char itm_testitm_seen[] = "There is a TESTITM lodged in the wall";
 const char itm_testitm_exmn[] = "It's a test item. Use it on a test object.";
 //Game items
 struct itm itm_testitm;
-//Array of all the game items
-struct itm* game_itms[ITEM_COUNT];
 
 void InitItms(){
 

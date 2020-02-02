@@ -28,6 +28,7 @@ const char rm_flvr_testsouth[] = 	"This room is south of the start room.";
 const char rm_flvr_testwest[] = 	"This room is west of the start room. It's barren.";
 const char rm_flvr_testdown[] =		"You enter the test basement. It's spooky in here";
 const char rm_flvr_testup[] = 		"You go to the second story of the test building. There are no windows";
+
 //Room item lists
 struct itm* rm_testeast_itms[1];
 //Room object lists

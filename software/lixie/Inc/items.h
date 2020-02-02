@@ -42,4 +42,6 @@ struct itm {
 void InitItms();
 //Get an item by its token
 struct itm* GetItmByToken(uint8_t token);
+//Array of all the game items
+struct itm* game_itms[ITEM_COUNT];
 #endif

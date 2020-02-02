@@ -66,7 +66,7 @@
 #define USBD_VID     1155
 #define USBD_LANGID_STRING     1033
 #define USBD_MANUFACTURER_STRING     "frkbmb"
-#define USBD_PID_FS     1336
+#define USBD_PID_FS     1337
 #define USBD_PRODUCT_STRING_FS     "totem"
 #define USBD_CONFIGURATION_STRING_FS     "usbserial"
 #define USBD_INTERFACE_STRING_FS     "usbserial_generic"

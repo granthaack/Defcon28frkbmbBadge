@@ -1,5 +1,10 @@
 game.c:15:6:InitGame	8	static
-game.c:24:6:PrintBadInput	24	static
-game.c:39:6:GameLoop	40	static
-game.c:66:6:PrintLocation	8	static
-game.c:70:6:MovePlayer	8	static
+game.c:23:6:PrintBadInput	24	static
+game.c:38:6:GameLoop	24	static
+game.c:76:6:UseItem	24	static
+game.c:109:6:PrintLocation	112	static
+game.c:146:6:PrintInventory	16	static
+game.c:154:6:ExamineItem	16	static
+game.c:164:6:GetItem	16	static
+game.c:177:6:MovePlayer	16	static
+game.c:249:6:UseItemStateMachine	16	static
