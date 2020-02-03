@@ -1,4 +1,4 @@
-update=Wed 15 Jan 2020 09:01:43 PM PST
+update=Mon 03 Feb 2020 12:15:32 AM PST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=lixie
 LibName31=/home/ghaack/projects/Defcon28frkbmbBadge/board/prototype/frkbmb28-cache
+LibName32=Switch
