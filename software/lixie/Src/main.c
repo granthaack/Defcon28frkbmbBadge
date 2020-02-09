@@ -48,7 +48,7 @@
 I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
-
+volatile uint8_t stopState = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -103,10 +103,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  GameLoop();
+	GameLoop();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	if(stopState){
+		HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFE);
+		SystemClock_Config();
+		//MX_USB_DEVICE_Init();
+		stopState = 0;
+	}
 
   }
   /* USER CODE END 3 */
@@ -232,6 +238,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 }
 

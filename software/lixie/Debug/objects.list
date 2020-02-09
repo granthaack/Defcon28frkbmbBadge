@@ -25,6 +25,7 @@
 "Src/lexer.o"
 "Src/main.o"
 "Src/objects.o"
+"Src/power.o"
 "Src/rooms.o"
 "Src/stm32l0xx_hal_msp.o"
 "Src/stm32l0xx_it.o"

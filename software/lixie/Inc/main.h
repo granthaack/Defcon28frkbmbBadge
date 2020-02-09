@@ -54,12 +54,14 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void SystemClock_Config(void);
+volatile uint8_t stopState;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
+#define B1_EXTI_IRQn EXTI4_15_IRQn
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
