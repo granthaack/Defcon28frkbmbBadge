@@ -36,7 +36,8 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
  ../Inc/lexer.h ../Inc/game.h ../Inc/lexer.h ../Inc/items.h \
- ../Inc/objects.h ../Inc/rooms.h
+ ../Inc/objects.h ../Inc/rooms.h ../Inc/power.h ../Inc/usbd_cdc_if.h \
+ ../Inc/game.h
 
 ../Inc/main.h:
 
@@ -127,3 +128,9 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Inc/objects.h:
 
 ../Inc/rooms.h:
+
+../Inc/power.h:
+
+../Inc/usbd_cdc_if.h:
+
+../Inc/game.h:

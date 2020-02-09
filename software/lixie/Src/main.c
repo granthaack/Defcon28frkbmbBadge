@@ -27,6 +27,7 @@
 #include "usbd_cdc_if.h"
 #include "lexer.h"
 #include "game.h"
+#include "power.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,10 +109,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	if(stopState){
-		HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFE);
-		SystemClock_Config();
-		//MX_USB_DEVICE_Init();
-		stopState = 0;
+		DeepSleep();
 	}
 
   }
