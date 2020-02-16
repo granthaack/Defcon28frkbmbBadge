@@ -62,6 +62,9 @@ void GameLoop(){
 			  else if(game_tokens[0] == LTKN_ACT_USE){
 				  UseItem();
 			  }
+			  else if(game_tokens[0] == LTKN_ACT_MIX){
+				  MixItems();
+			  }
 			  else{
 				  PrintToConsole("You can't perform that action", 29);
 			  }
@@ -80,7 +83,7 @@ void UseItem(){
 		PrintToConsole("You can't use that item", 23);
 		return;
 	}
-	//Make sure the item is in the players iventory
+	//Make sure the item is in the players inventory
 	if(useitem->state != ITM_IN_INVENTORY){
 		PrintToConsole("You can't use that item", 23);
 		return;
@@ -154,11 +157,12 @@ void PrintInventory(){
 void ExamineItem(){
 	struct itm* examine = GetItmByToken(game_tokens[1]);
 	if(examine != NULL){
-		PrintStrToConsole(examine->examine_text);
+		if(examine->state == ITM_IN_INVENTORY){
+			PrintStrToConsole(examine->examine_text);
+			return;
+		}
 	}
-	else{
-		PrintToConsole("You can't examine that", 22);
-	}
+	PrintToConsole("You can't examine that", 22);
 }
 
 void GetItem(){
@@ -244,6 +248,41 @@ void MovePlayer(){
 	else{
 		PrintToConsole("You can't go that way", 21);
 	}
+}
+
+void MixItems(){
+	struct itm* itm1 = GetItmByToken(game_tokens[1]);
+	struct itm* itm2 = GetItmByToken(game_tokens[2]);
+	//Make sure the tokens are both value items
+	if(itm1 && itm2){
+		//Make sure the items are in the players inventory
+		if((itm1->state == ITM_IN_INVENTORY) &&
+				itm2->state == ITM_IN_INVENTORY){
+			//Make sure the items are meant to be combined
+			if((itm1->combine_token == itm2->token) &&
+					(itm2->combine_token == itm1->token)){
+				//If all these checks are passed, then mix them
+				return MixItemsMixer(itm1, itm2);
+			}
+		}
+	}
+	PrintToConsole("You can't mix those", 19);
+
+}
+
+void MixItemsMixer(struct itm* itm1, struct itm* itm2){
+	//Mix testitm1 and testitm2 together to make a testitm
+	if(((itm1->token == LTKN_ITM_TEST1) && (itm2->token == LTKN_ITM_TEST2)) ||
+	   ((itm1->token == LTKN_ITM_TEST2) && (itm2->token == LTKN_ITM_TEST1))){
+		//Remove the two items from player inventory
+		itm1->state = ITM_USED_UP;
+		itm2->state = ITM_USED_UP;
+		//Put testitm in the players inventory
+		GetItmByToken(LTKN_ITM_TEST)->state = ITM_IN_INVENTORY;
+		PrintToConsole("The testitm1 and testitm2 fuse together to make a testitm.", 58);
+		return;
+	}
+	return;
 }
 
 void UseItemStateMachine(){

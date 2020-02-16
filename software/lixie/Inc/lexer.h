@@ -40,6 +40,8 @@
 
 //Items (0x50 to 0x7F)
 #define LTKN_ITM_TEST		0x50
+#define LTKN_ITM_TEST1		0x51
+#define LTKN_ITM_TEST2		0x52
 
 //Commands (0x80 to 0xAF)
 #define LTKN_CMD_TEST		0x80

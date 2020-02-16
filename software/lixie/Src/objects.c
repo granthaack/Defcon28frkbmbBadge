@@ -3,9 +3,9 @@
 //Object Names
 const char obj_testobject_name[] = "Test Object";
 //Object seen text
-const char obj_testobj_seen[] = "To the left is a TESTOBJ. Looks like something can be used on it.";
+const char obj_testobj_seen[] = "To the left is a testobj. Looks like something can be used on it.";
 //Object examine text
-const char obj_testobj_examine[] = "It looks like a test object. Use a TESTITM on it";
+const char obj_testobj_examine[] = "It looks like a test object. Use a testitm on it";
 //Game objects
 struct obj obj_testobject;
 //Array of all the game objects

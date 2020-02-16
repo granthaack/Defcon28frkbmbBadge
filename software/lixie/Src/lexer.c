@@ -73,6 +73,14 @@ uint8_t TokenizeUserInput(char *buf, uint8_t len){
 			game_tokens[token_count] = LTKN_OBJ_TEST;
 			buf_index = buf_index + 8;
 		}
+		else if(!strncmp(&buf[buf_index], "testitm1", 8)){
+			game_tokens[token_count] = LTKN_ITM_TEST1;
+			buf_index = buf_index + 9;
+		}
+		else if(!strncmp(&buf[buf_index], "testitm2", 8)){
+			game_tokens[token_count] = LTKN_ITM_TEST2;
+			buf_index = buf_index + 9;
+		}
 		else if(!strncmp(&buf[buf_index], "testitm", 7)){
 			game_tokens[token_count] = LTKN_ITM_TEST;
 			buf_index = buf_index + 8;

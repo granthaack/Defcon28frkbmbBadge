@@ -31,6 +31,7 @@ const char rm_flvr_testup[] = 		"You go to the second story of the test building
 
 //Room item lists
 struct itm* rm_testeast_itms[1];
+struct itm* rm_testsouth_itms[1];
 //Room object lists
 struct obj* rm_testdown_objs[1];
 
@@ -85,7 +86,7 @@ void InitRooms(){
 	rm_testeast.item_count = 1;
 	rm_testeast.object_count = 0;
 	rm_testeast.token = RTKN_TESTEAST;
-	rm_testeast_itms[0] = GetItmByToken(LTKN_ITM_TEST);
+	rm_testeast_itms[0] = GetItmByToken(LTKN_ITM_TEST1);
 	//Init the south room
 	rm_testsouth.north_room = &rm_teststart;
 	rm_testsouth.east_room = NULL;
@@ -95,11 +96,12 @@ void InitRooms(){
 	rm_testsouth.down_room = NULL;
 	rm_testsouth.name = rm_name_testsouth;
 	rm_testsouth.flavortext = rm_flvr_testsouth;
-	rm_testsouth.items = NULL;
+	rm_testsouth.items = rm_testsouth_itms;
 	rm_testsouth.objects = NULL;
-	rm_testsouth.item_count = 0;
+	rm_testsouth.item_count = 1;
 	rm_testsouth.object_count = 0;
 	rm_testsouth.token = RTKN_TESTSOUTH;
+	rm_testsouth_itms[0] = GetItmByToken(LTKN_ITM_TEST2);
 	//Init the west room
 	rm_testwest.north_room = NULL;
 	rm_testwest.east_room = &rm_teststart;

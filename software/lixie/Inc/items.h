@@ -7,7 +7,7 @@
 #include "lexer.h"
 
 //The number of game items
-#define ITEM_COUNT 1
+#define ITEM_COUNT 3
 //Item States
 //Null
 #define ITM_NULL			0x00

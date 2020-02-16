@@ -32,10 +32,11 @@ void SayCommand();
 //Get an item
 void GetItem();
 //Use an item();
-void UseItem();
-void UseItemStateMachine();
+void UseItem(); //Basic checker to make sure the syntax is right
+void UseItemStateMachine(); //Use the item based on the current state of the game
 //Mix two items();
-void MixItems();
+void MixItems(); //Basic checker to make sure syntax is right
+void MixItemsMixer(struct itm* itm1, struct itm* itm2); //Actually mix the items
 //Print the help dialogue
 void PrintHelp();
 //Show the player inventory
