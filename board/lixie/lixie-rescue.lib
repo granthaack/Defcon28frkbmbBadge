@@ -1,28 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Connector_TestPoint
+# +3.3V
 #
-DEF Connector_TestPoint TP 0 30 N N 1 F N
-F0 "TP" 0 270 50 H V C CNN
-F1 "Connector_TestPoint" 0 200 50 H V C CNN
-F2 "" 200 0 50 H I C CNN
-F3 "" 200 0 50 H I C CNN
-$FPLIST
- Pin*
- Test*
-$ENDFPLIST
-DRAW
-C 0 130 30 0 1 0 N
-X 1 1 0 0 100 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# lixie-rescue_+3.3V
-#
-DEF lixie-rescue_+3.3V #PWR 0 0 Y Y 1 F P
+DEF +3.3V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "lixie-rescue_+3.3V" 0 140 50 H V C CNN
+F1 "+3.3V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -33,11 +16,11 @@ X +3V3 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_+5V
+# +5V
 #
-DEF lixie-rescue_+5V #PWR 0 0 Y Y 1 F P
+DEF +5V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "lixie-rescue_+5V" 0 140 50 H V C CNN
+F1 "+5V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -48,11 +31,11 @@ X +5V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_+BATT
+# +BATT
 #
-DEF lixie-rescue_+BATT #PWR 0 0 Y Y 1 F P
+DEF +BATT #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "lixie-rescue_+BATT" 0 140 50 H V C CNN
+F1 "+BATT" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -63,11 +46,11 @@ X +BATT 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_Battery_Cell
+# Battery_Cell
 #
-DEF lixie-rescue_Battery_Cell BT 0 0 N N 1 F N
+DEF Battery_Cell BT 0 0 N N 1 F N
 F0 "BT" 100 100 50 H V L CNN
-F1 "lixie-rescue_Battery_Cell" 100 0 50 H V L CNN
+F1 "Battery_Cell" 100 0 50 H V L CNN
 F2 "" 0 60 50 V V C CNN
 F3 "" 0 60 50 V V C CNN
 DRAW
@@ -82,11 +65,11 @@ X - 2 0 -100 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_CONN_01X04
+# CONN_01X04
 #
-DEF lixie-rescue_CONN_01X04 P 0 40 Y N 1 F N
+DEF CONN_01X04 P 0 40 Y N 1 F N
 F0 "P" 0 250 50 H V C CNN
-F1 "lixie-rescue_CONN_01X04" 100 0 50 V V C CNN
+F1 "CONN_01X04" 100 0 50 V V C CNN
 F2 "" 0 0 50 H V C CNN
 F3 "" 0 0 50 H V C CNN
 $FPLIST
@@ -108,11 +91,11 @@ X P4 4 -200 -150 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_D
+# D
 #
-DEF lixie-rescue_D D 0 40 N N 1 F N
+DEF D D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "lixie-rescue_D" 0 -100 50 H V C CNN
+F1 "D" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H V C CNN
 F3 "" 0 0 50 H V C CNN
 $FPLIST
@@ -132,11 +115,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_GND
+# GND
 #
-DEF lixie-rescue_GND #PWR 0 0 Y Y 1 F P
+DEF GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "lixie-rescue_GND" 0 -150 50 H V C CNN
+F1 "GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -145,11 +128,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_IS31FL3738
+# IS31FL3738
 #
-DEF lixie-rescue_IS31FL3738 U 0 40 Y Y 1 F N
+DEF IS31FL3738 U 0 40 Y Y 1 F N
 F0 "U" 0 100 60 H V C CNN
-F1 "lixie-rescue_IS31FL3738" 0 0 60 H V C CNN
+F1 "IS31FL3738" 0 0 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
@@ -186,11 +169,11 @@ X SW6 9 700 450 200 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_LED_RGAB
+# LED_RGAB
 #
-DEF lixie-rescue_LED_RGAB D 0 0 Y N 1 F N
+DEF LED_RGAB D 0 0 Y N 1 F N
 F0 "D" 0 370 50 H V C CNN
-F1 "lixie-rescue_LED_RGAB" 0 -350 50 H V C CNN
+F1 "LED_RGAB" 0 -350 50 H V C CNN
 F2 "" 0 -50 50 H V C CNN
 F3 "" 0 -50 50 H V C CNN
 DRAW
@@ -223,11 +206,11 @@ X BK 4 -200 -200 100 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_MAX40200
+# MAX40200
 #
-DEF lixie-rescue_MAX40200 U 0 40 Y Y 1 F N
+DEF MAX40200 U 0 40 Y Y 1 F N
 F0 "U" 0 50 60 H V C CNN
-F1 "lixie-rescue_MAX40200" 0 -50 60 H V C CNN
+F1 "MAX40200" 0 -50 60 H V C CNN
 F2 "" 0 -150 60 H I C CNN
 F3 "" 0 -150 60 H I C CNN
 DRAW
@@ -246,11 +229,11 @@ X VOUT 5 700 250 200 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_MIC550x
+# MIC550x
 #
-DEF lixie-rescue_MIC550x U 0 40 Y Y 1 F N
+DEF MIC550x U 0 40 Y Y 1 F N
 F0 "U" 0 50 60 H V C CNN
-F1 "lixie-rescue_MIC550x" 0 -50 60 H V C CNN
+F1 "MIC550x" 0 -50 60 H V C CNN
 F2 "" 0 -150 60 H I C CNN
 F3 "" 0 -150 60 H I C CNN
 DRAW
@@ -263,11 +246,11 @@ X VOUT 5 600 200 200 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_Polyfuse
+# Polyfuse
 #
-DEF lixie-rescue_Polyfuse F 0 0 N Y 1 F N
+DEF Polyfuse F 0 0 N Y 1 F N
 F0 "F" -100 0 50 V V C CNN
-F1 "lixie-rescue_Polyfuse" 100 0 50 V V C CNN
+F1 "Polyfuse" 100 0 50 V V C CNN
 F2 "" 50 -200 50 H I L CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -283,11 +266,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_R
+# R
 #
-DEF lixie-rescue_R R 0 0 N Y 1 F N
+DEF R R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
-F1 "lixie-rescue_R" 0 0 50 V V C CNN
+F1 "R" 0 0 50 V V C CNN
 F2 "" -70 0 50 V V C CNN
 F3 "" 0 0 50 H V C CNN
 $FPLIST
@@ -301,11 +284,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_STM32L073xZ
+# STM32L073xZ
 #
-DEF lixie-rescue_STM32L073xZ U 0 40 Y Y 1 F N
+DEF STM32L073xZ U 0 40 Y Y 1 F N
 F0 "U" 0 0 60 H V C CNN
-F1 "lixie-rescue_STM32L073xZ" 0 -100 60 H V C CNN
+F1 "STM32L073xZ" 0 -100 60 H V C CNN
 F2 "" 0 -50 60 H I C CNN
 F3 "" 0 -50 60 H I C CNN
 DRAW
@@ -378,11 +361,11 @@ X PC1 9 -700 -300 200 R 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_SW_Push
+# SW_Push
 #
-DEF lixie-rescue_SW_Push SW 0 40 N N 1 F N
+DEF SW_Push SW 0 40 N N 1 F N
 F0 "SW" 50 100 50 H V L CNN
-F1 "lixie-rescue_SW_Push" 0 -60 50 H V C CNN
+F1 "SW_Push" 0 -60 50 H V C CNN
 F2 "" 0 200 50 H I C CNN
 F3 "" 0 200 50 H I C CNN
 DRAW
@@ -395,11 +378,11 @@ X 2 2 200 0 100 L 50 50 0 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_USB_OTG
+# USB_OTG
 #
-DEF lixie-rescue_USB_OTG P 0 40 Y Y 1 F N
+DEF USB_OTG P 0 40 Y Y 1 F N
 F0 "P" 325 -125 50 H V C CNN
-F1 "lixie-rescue_USB_OTG" 0 200 50 H V C CNN
+F1 "USB_OTG" 0 200 50 H V C CNN
 F2 "" -50 -100 50 V V C CNN
 F3 "" -50 -100 50 V V C CNN
 $FPLIST
@@ -421,11 +404,11 @@ X shield 6 400 100 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lixie-rescue_VBUS
+# VBUS
 #
-DEF lixie-rescue_VBUS #PWR 0 0 Y Y 1 F P
+DEF VBUS #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "lixie-rescue_VBUS" 0 150 50 H V C CNN
+F1 "VBUS" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

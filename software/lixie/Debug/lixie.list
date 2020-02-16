@@ -17344,6 +17344,7 @@ void DeepSleep(){
 	HAL_Delay(10);
  80065ae:	200a      	movs	r0, #10
  80065b0:	f7f9 fe96 	bl	80002e0 <HAL_Delay>
+	//In the future, shut off the LED matrix and LEDs here
 
 	// Chip goes to sleep here, waits for interrupt
 	HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFE);

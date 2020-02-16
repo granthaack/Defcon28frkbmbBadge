@@ -34,6 +34,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 lixie.list \
 
+OBJCOPY_BIN += \
+lixie.bin \
+
 
 # All Target
 all: lixie.elf secondary-outputs
@@ -54,12 +57,17 @@ lixie.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+lixie.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "lixie.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 .PHONY: all clean dependents
 .SECONDARY:
