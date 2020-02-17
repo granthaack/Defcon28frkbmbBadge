@@ -23,10 +23,6 @@
 struct itm {
 	//The token that the game logic refers to the item by
 	uint8_t token;
-	//The item that this item can be combined with (if at all)
-	uint8_t combine_token;
-	//The object that this item can be used on (if at all)
-	uint8_t object_token;
 	//The current state of the item
 	uint8_t state;
 	//Pointer to the C string containing the human readable name

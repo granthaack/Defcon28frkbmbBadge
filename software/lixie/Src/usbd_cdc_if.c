@@ -346,10 +346,10 @@ void ClearTxBuffer(){
 	memset(UserTxBufferFS, '\0', APP_TX_DATA_SIZE);
 }
 
-void PrintToConsole(const char* c, uint16_t size){
+void PrintToConsole(const char* c){
 	ClearTxBuffer();
 	uint16_t i = 0;
-	while(i < size && i < APP_TX_DATA_SIZE - 3){
+	while(c[i] != '\0' && i < APP_TX_DATA_SIZE - 3){
 		UserTxBufferFS[i] = c[i];
 		i++;
 	}

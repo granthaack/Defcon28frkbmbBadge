@@ -106,7 +106,7 @@ uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 
 /* USER CODE BEGIN EXPORTED_FUNCTIONS */
-void PrintToConsole(const char* c, uint16_t size);
+void PrintToConsole(const char* c);
 void PrintStrToConsole(char* c);
 char* GetUserDataBuf();
 uint8_t GetUserDataSize();

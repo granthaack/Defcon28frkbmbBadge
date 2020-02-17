@@ -2,7 +2,7 @@
 
 void DeepSleep(){
 	/* Pre sleep housekeeping */
-	PrintToConsole("Sleep button pressed, Unplug from USB. Zzzzzz.....", 50);
+	PrintToConsole("Sleep button pressed, Unplug from USB. Zzzzzz.....\0");
 	//USB transmission is interrupt based, wait 10 milliseconds for it to transfer before killing it
 	HAL_Delay(10);
 	//In the future, shut off the LED matrix and LEDs here

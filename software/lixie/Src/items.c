@@ -20,24 +20,18 @@ struct itm itm_testitm2;
 void InitItms(){
 
 	itm_testitm.token = LTKN_ITM_TEST;
-	itm_testitm.combine_token = ITM_NULL;
-	itm_testitm.object_token = LTKN_OBJ_TEST;
 	itm_testitm.state = ITM_NOT_PICKED_UP;
 	itm_testitm.name = itm_testitem_name;
 	itm_testitm.seen_text = itm_testitm_seen;
 	itm_testitm.examine_text = itm_testitm_exmn;
 
 	itm_testitm1.token = LTKN_ITM_TEST1;
-	itm_testitm1.combine_token = LTKN_ITM_TEST2;
-	itm_testitm1.object_token = ITM_NULL;
 	itm_testitm1.state = ITM_NOT_PICKED_UP;
 	itm_testitm1.name = itm_testitem1_name;
 	itm_testitm1.seen_text = itm_testitm1_seen;
 	itm_testitm1.examine_text = itm_testitm1_exmn;
 
 	itm_testitm2.token = LTKN_ITM_TEST2;
-	itm_testitm2.combine_token = LTKN_ITM_TEST1;
-	itm_testitm2.object_token = ITM_NULL;
 	itm_testitm2.state = ITM_NOT_PICKED_UP;
 	itm_testitm2.name = itm_testitem2_name;
 	itm_testitm2.seen_text = itm_testitm2_seen;

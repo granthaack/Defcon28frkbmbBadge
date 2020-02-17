@@ -65,8 +65,11 @@ void GameLoop(){
 			  else if(game_tokens[0] == LTKN_ACT_MIX){
 				  MixItems();
 			  }
+			  else if(game_tokens[0] == LTKN_ACT_HELP){
+				  PrintHelp();
+			  }
 			  else{
-				  PrintToConsole("You can't perform that action", 29);
+				  PrintToConsole("You can't perform that action.\0");
 			  }
 		  }
 		  ClearUserDataBuf();
@@ -74,39 +77,6 @@ void GameLoop(){
 	  else{
 
 	  }
-}
-
-void UseItem(){
-	//Make sure the item exists
-	struct itm* useitem = GetItmByToken(game_tokens[1]);
-	if(useitem == NULL){
-		PrintToConsole("You can't use that item", 23);
-		return;
-	}
-	//Make sure the item is in the players inventory
-	if(useitem->state != ITM_IN_INVENTORY){
-		PrintToConsole("You can't use that item", 23);
-		return;
-	}
-	//Make sure the object the item is being used on exists
-	struct obj* useobj = GetObjByToken(game_tokens[2]);
-	if(useobj == NULL){
-		PrintToConsole("You can't use that on that object", 33);
-		return;
-	}
-	//Make sure the object that item is being used on is in the current room
-	for(uint8_t i = 0; i < current_room->object_count; i++){
-		if(useobj == current_room->objects[i]){
-			//Make sure that item and that object can be used together
-			if(useitem->object_token == game_tokens[2])
-			{
-				UseItemStateMachine();
-				return;
-			}
-		}
-	}
-	PrintToConsole("You can't use that on that object", 33);
-	return;
 }
 
 void PrintLocation(){
@@ -154,6 +124,40 @@ void PrintInventory(){
 	}
 }
 
+void PrintHelp(){
+	PrintToConsole(
+		"go (north, south, east, west, up, down)\r\n"
+			"\tMove in a given direction\r\n"
+		"use (item) (object)\r\n"
+			"\tUse an item on an object\r\n"
+		"push (object)\r\n"
+			"\tPush an object\r\n"
+		"pull (object)\r\n"
+			"\tPull an object\r\n"
+		"turn (object) (left, right)\r\n"
+			"\tTurn an object left or right\r\n"
+		"location\r\n"
+			"\tPrint your current location\r\n"
+		"say (command)\r\n"
+			"\tSay something out loud\r\n"
+		"get (item)\r\n"
+			"\tPick up an item\r\n"
+		"mix (item) (item)\r\n"
+			"\tMix two different items in your inventory\r\n"
+		"examine (item)\r\n"
+			"\tExamine an item in your inventory\r\n\0"
+		"inventory\r\n"
+			"\tView your current inventory\r\n"
+	);
+	//Need to split into two calls
+	//USB Transmit is asynchronous, so wait 1ms for the data to transfer
+	//TODO: Get rid of the dumb delay, poll the USB status somehow
+	HAL_Delay(1);
+	PrintToConsole(
+		"help\r\n"
+			"\tSee this dialogue\r\n\0");
+}
+
 void ExamineItem(){
 	struct itm* examine = GetItmByToken(game_tokens[1]);
 	if(examine != NULL){
@@ -162,7 +166,7 @@ void ExamineItem(){
 			return;
 		}
 	}
-	PrintToConsole("You can't examine that", 22);
+	PrintToConsole("You can't examine that.\0");
 }
 
 void GetItem(){
@@ -170,12 +174,12 @@ void GetItem(){
 		if(game_tokens[1] == current_room->items[i]->token){
 			if(current_room->items[i]->state == ITM_NOT_PICKED_UP){
 				current_room->items[i]->state = ITM_IN_INVENTORY;
-				PrintToConsole("You got it", 10);
+				PrintToConsole("You got it\0");
 				return;
 			}
 		}
 	}
-	PrintToConsole("You can't get that", 18);
+	PrintToConsole("You can't get that.\0");
 }
 
 void MovePlayer(){
@@ -185,7 +189,7 @@ void MovePlayer(){
 				current_room = current_room->north_room;
 			}
 			else{
-				PrintToConsole("You can't go north", 18);
+				PrintToConsole("You can't go north.\0");
 				return;
 			}
 		}
@@ -194,7 +198,7 @@ void MovePlayer(){
 				current_room = current_room->east_room;
 			}
 			else{
-				PrintToConsole("You can't go east", 17);
+				PrintToConsole("You can't go east.\0");
 				return;
 			}
 		}
@@ -203,7 +207,7 @@ void MovePlayer(){
 				current_room = current_room->south_room;
 			}
 			else{
-				PrintToConsole("You can't go south", 18);
+				PrintToConsole("You can't go south.\0");
 				return;
 			}
 		}
@@ -212,7 +216,7 @@ void MovePlayer(){
 				current_room = current_room->west_room;
 			}
 			else{
-				PrintToConsole("You can't go west", 17);
+				PrintToConsole("You can't go west.\0");
 				return;
 			}
 		}
@@ -221,7 +225,7 @@ void MovePlayer(){
 				current_room = current_room->up_room;
 			}
 			else{
-				PrintToConsole("You can't go up", 15);
+				PrintToConsole("You can't go up.\0");
 				return;
 			}
 		}
@@ -230,7 +234,7 @@ void MovePlayer(){
 				current_room = current_room->down_room;
 			}
 			else{
-				PrintToConsole("You can't go down", 17);
+				PrintToConsole("You can't go down.\0");
 				return;
 			}
 		}
@@ -246,7 +250,7 @@ void MovePlayer(){
 		current_state = GSTATE_MOVING;
 	}
 	else{
-		PrintToConsole("You can't go that way", 21);
+		PrintToConsole("You can't go that way\0");
 	}
 }
 
@@ -258,16 +262,13 @@ void MixItems(){
 		//Make sure the items are in the players inventory
 		if((itm1->state == ITM_IN_INVENTORY) &&
 				itm2->state == ITM_IN_INVENTORY){
-			//Make sure the items are meant to be combined
-			if((itm1->combine_token == itm2->token) &&
-					(itm2->combine_token == itm1->token)){
-				//If all these checks are passed, then mix them
-				return MixItemsMixer(itm1, itm2);
-			}
+			return MixItemsMixer(itm1, itm2);
 		}
 	}
-	PrintToConsole("You can't mix those", 19);
-
+	else{
+		PrintToConsole("You can't mix those.\0");
+		return;
+	}
 }
 
 void MixItemsMixer(struct itm* itm1, struct itm* itm2){
@@ -279,9 +280,41 @@ void MixItemsMixer(struct itm* itm1, struct itm* itm2){
 		itm2->state = ITM_USED_UP;
 		//Put testitm in the players inventory
 		GetItmByToken(LTKN_ITM_TEST)->state = ITM_IN_INVENTORY;
-		PrintToConsole("The testitm1 and testitm2 fuse together to make a testitm.", 58);
+		PrintToConsole("The testitm1 and testitm2 fuse together to make a testitm.\0");
 		return;
 	}
+	else{
+		PrintToConsole("You can't mix those.\0");
+		return;
+	}
+}
+
+void UseItem(){
+	//Make sure the item exists
+	struct itm* useitem = GetItmByToken(game_tokens[1]);
+	if(useitem == NULL){
+		PrintToConsole("You can't use that item.\0");
+		return;
+	}
+	//Make sure the item is in the players inventory
+	if(useitem->state != ITM_IN_INVENTORY){
+		PrintToConsole("You can't use that item.\0");
+		return;
+	}
+	//Make sure the object the item is being used on exists
+	struct obj* useobj = GetObjByToken(game_tokens[2]);
+	if(useobj == NULL){
+		PrintToConsole("You can't use that on that object.\0");
+		return;
+	}
+	//Make sure the object that item is being used on is in the current room
+	for(uint8_t i = 0; i < current_room->object_count; i++){
+		if(useobj == current_room->objects[i]){
+			UseItemStateMachine();
+			return;
+		}
+	}
+	PrintToConsole("You can't use that on that object.\0");
 	return;
 }
 
@@ -296,6 +329,9 @@ void UseItemStateMachine(){
 		//Set the item as used
 		GetItmByToken(game_tokens[1])->state = ITM_USED_UP;
 		//Print some text
-		PrintToConsole("You hear something click in the start room", 42);
+		PrintToConsole("You hear something click in the start room\0");
+	}
+	else{
+		PrintToConsole("You can't use that.\0");
 	}
 }
