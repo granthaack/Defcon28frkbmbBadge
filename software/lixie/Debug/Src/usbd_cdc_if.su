@@ -7,8 +7,8 @@ usbd_cdc_if.c:335:7:GetUserDataBuf	8	static
 usbd_cdc_if.c:339:6:ClearUserDataBuf	8	static
 usbd_cdc_if.c:345:6:ClearTxBuffer	8	static
 usbd_cdc_if.c:349:6:PrintToConsole	24	static
-usbd_cdc_if.c:361:9:CheckUserDataReady	8	static
-usbd_cdc_if.c:364:6:DisableLocalEcho	8	static
-usbd_cdc_if.c:367:6:EnableLocalEcho	8	static
-usbd_cdc_if.c:371:9:GetUserDataSize	8	static
-usbd_cdc_if.c:375:6:PrintStrToConsole	24	static
+usbd_cdc_if.c:364:9:CheckUserDataReady	8	static
+usbd_cdc_if.c:367:6:DisableLocalEcho	8	static
+usbd_cdc_if.c:370:6:EnableLocalEcho	8	static
+usbd_cdc_if.c:374:9:GetUserDataSize	8	static
+usbd_cdc_if.c:378:6:PrintStrToConsole	24	static

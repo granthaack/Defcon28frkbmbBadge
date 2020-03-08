@@ -1,10 +1,10 @@
 #include "items.h"
-
+//TODO: Make the rail fence cipher items
 //Item Names
 const char itm_testitem_name[] = "Test Item";
 const char itm_testitem1_name[] = "Test Item Mix 1";
 const char itm_testitem2_name[] = "Test Item Mix 2";
-//Item seen text
+//Item seen textTest Item
 const char itm_testitm_seen[] = "You shouldn't see this item";
 const char itm_testitm1_seen[] = "One a testitm1 is lodged in the wall";
 const char itm_testitm2_seen[] = "A testitm2 is laying on the floor";

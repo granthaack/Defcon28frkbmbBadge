@@ -89,11 +89,9 @@ uint8_t TokenizeUserInput(char *buf, uint8_t len){
 			game_tokens[token_count] = LTKN_ACT_EXAMINE;
 			buf_index = buf_index + 8;
 		}
-
-
-		else if(!strncmp(&buf[buf_index], "testobj", 7)){
-			game_tokens[token_count] = LTKN_OBJ_TEST;
-			buf_index = buf_index + 8;
+		else if(!strncmp(&buf[buf_index], "dial", 4)){
+			game_tokens[token_count] = LTKN_OBJ_STRTDIAL;
+			buf_index = buf_index + 5;
 		}
 		else if(!strncmp(&buf[buf_index], "testitm1", 8)){
 			game_tokens[token_count] = LTKN_ITM_TEST1;

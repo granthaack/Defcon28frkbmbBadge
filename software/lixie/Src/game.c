@@ -6,8 +6,16 @@
 
 //Pointer to the current game room
 struct room* current_room;
+
 //The current game state
 uint16_t current_state;
+
+// TODO Totem stuff
+//The totem states
+uint8_t totem_state;
+//The highest unlocked totem level
+uint8_t totem_level;
+
 //Output buffer for the game
 #define GAME_OUTPUT_BUFFER_SIZE 512
 char game_output_buffer[GAME_OUTPUT_BUFFER_SIZE];
@@ -16,7 +24,9 @@ void InitGame(){
 	InitItms();
 	InitObjs();
 	InitRooms();
-	current_room = GetRoomByToken(RTKN_TESTSTART);
+	totem_state = 0;
+	totem_level = 0;
+	current_room = GetRoomByToken(RTKN_STARTROOM);
 	current_state = GSTATE_MOVING;
 }
 
@@ -57,7 +67,7 @@ void GameLoop(){
 				  PrintInventory();
 			  }
 			  else if(game_tokens[0] == LTKN_ACT_EXAMINE){
-				  ExamineItem();
+				  Examine();
 			  }
 			  else if(game_tokens[0] == LTKN_ACT_USE){
 				  UseItem();
@@ -68,6 +78,12 @@ void GameLoop(){
 			  else if(game_tokens[0] == LTKN_ACT_HELP){
 				  PrintHelp();
 			  }
+			  else if(game_tokens[0] == LTKN_ACT_TURN){
+				  TurnObject();
+			  }
+			  else if(game_tokens[0] == LTKN_TOKEN_NULL){
+				  PrintRoomText();
+			  }
 			  else{
 				  PrintToConsole("You can't perform that action.\0");
 			  }
@@ -75,7 +91,7 @@ void GameLoop(){
 		  ClearUserDataBuf();
 	  }
 	  else{
-
+		  //MISRA
 	  }
 }
 
@@ -158,14 +174,28 @@ void PrintHelp(){
 			"\tSee this dialogue\r\n\0");
 }
 
-void ExamineItem(){
-	struct itm* examine = GetItmByToken(game_tokens[1]);
-	if(examine != NULL){
-		if(examine->state == ITM_IN_INVENTORY){
-			PrintStrToConsole(examine->examine_text);
+void Examine(){
+	// TODO: Haven't tested this with items
+	// Try to examine an item first
+	struct itm* ex_itm = GetItmByToken(game_tokens[1]);
+	if(ex_itm != NULL){
+		if(ex_itm->state == ITM_IN_INVENTORY){
+			PrintStrToConsole(ex_itm->examine_text);
 			return;
 		}
 	}
+	// If item didn't work, try to examine an object
+	struct obj* ex_obj = GetObjByToken(game_tokens[1]);
+	if(ex_obj != NULL){
+		// Make sure that object is in this room before printing
+		for(uint8_t i = 0; i < current_room->object_count; i++){
+			if(current_room->objects[i] == ex_obj){
+				PrintStrToConsole(ex_obj->examine_text);
+				return;
+			}
+		}
+	}
+	// If neither worked, it's invalid
 	PrintToConsole("You can't examine that.\0");
 }
 
@@ -238,15 +268,7 @@ void MovePlayer(){
 				return;
 			}
 		}
-		PrintStrToConsole(current_room->flavortext);
-		for(uint8_t i = 0; i < current_room->item_count; i++){
-			if(current_room->items[i]->state == ITM_NOT_PICKED_UP){
-				PrintStrToConsole(current_room->items[i]->seen_text);
-			}
-		}
-		for(uint8_t i = 0; i < current_room->object_count; i++){
-			PrintStrToConsole(current_room->objects[i]->seen_text);
-		}
+		PrintRoomText();
 		current_state = GSTATE_MOVING;
 	}
 	else{
@@ -254,10 +276,24 @@ void MovePlayer(){
 	}
 }
 
+void PrintRoomText(){
+	PrintStrToConsole(current_room->flavortext);
+	for(uint8_t i = 0; i < current_room->item_count; i++){
+		if(current_room->items[i]->state == ITM_NOT_PICKED_UP){
+			PrintStrToConsole(current_room->items[i]->seen_text);
+		}
+	}
+	for(uint8_t i = 0; i < current_room->object_count; i++){
+		if(current_room->objects[i]->state != OBJ_ACTED_ON){
+			PrintStrToConsole(current_room->objects[i]->seen_text);
+		}
+	}
+}
+
 void MixItems(){
 	struct itm* itm1 = GetItmByToken(game_tokens[1]);
 	struct itm* itm2 = GetItmByToken(game_tokens[2]);
-	//Make sure the tokens are both value items
+	//Make sure the tokens are both actually items
 	if(itm1 && itm2){
 		//Make sure the items are in the players inventory
 		if((itm1->state == ITM_IN_INVENTORY) &&
@@ -319,7 +355,9 @@ void UseItem(){
 }
 
 void UseItemStateMachine(){
-	//Use a test item on a test object, unlocks the final room
+	/*	Keep this as reference
+	 * 	//Use a test item on a test object, unlocks the final room
+	 *
 	if(game_tokens[1] == LTKN_ITM_TEST && game_tokens[2] == LTKN_OBJ_TEST){
 		//Link the two rooms
 		GetRoomByToken(RTKN_TESTSTART)->up_room = GetRoomByToken(RTKN_TESTUP);
@@ -333,5 +371,90 @@ void UseItemStateMachine(){
 	}
 	else{
 		PrintToConsole("You can't use that.\0");
+	}
+	*/
+}
+
+void TurnObject(){
+	// Make sure it's being turned in a valid direction
+	uint8_t direction;
+	if(game_tokens[2] == LTKN_TURND_LEFT){
+		direction = 0;
+	}
+	else if (game_tokens[2] == LTKN_TURND_RIGHT){
+		direction = 1;
+	}
+	else if (game_tokens[3] == LTKN_TOKEN_NULL){
+		PrintToConsole("Please specify a direction to turn (left or right).\0");
+		return;
+	}
+	else{
+		PrintToConsole("You can't turn that in that direction.\0");
+		return;
+	}
+	struct obj* ex_obj = GetObjByToken(game_tokens[1]);
+	// Make sure the object is in the room first
+	if(ex_obj != NULL){
+		for(uint8_t i = 0; i < current_room->object_count; i++){
+			// If the item is in the room and it can be interacted with, then enter the
+			// turn state machine
+			if(current_room->objects[i] == ex_obj &&
+					current_room->objects[i]->state == OBJ_UNTOUCHED){
+				TurnObjectStateMachine(direction);
+				return;
+			}
+		}
+	}
+	PrintToConsole("You can't turn that.\0");
+}
+
+// Left is 0, right is 1
+void TurnObjectStateMachine(uint8_t direction){
+	// If in the start room, turn the start dial
+	if(current_room->token == RTKN_STARTROOM){
+		PrintToConsole("You turn the dial with a clunk.\0");
+		switch(current_state){
+			case GSTATE_MOVING:{
+				if(direction == 0){
+					current_state = GSTATE_STARTROOM_TURNDIAL1;
+				}
+				else{
+					current_state = GSTATE_MOVING;
+				}
+				break;
+			}
+			case GSTATE_STARTROOM_TURNDIAL1:{
+				if(direction == 0){
+					current_state = GSTATE_STARTROOM_TURNDIAL2;
+				}
+				else{
+					current_state = GSTATE_MOVING;
+				}
+				break;
+			}
+			case GSTATE_STARTROOM_TURNDIAL2:{
+				if(direction == 1){
+					current_state = GSTATE_STARTROOM_TURNDIAL3;
+				}
+				else{
+					current_state = GSTATE_MOVING;
+				}
+				break;
+			}
+			case GSTATE_STARTROOM_TURNDIAL3:{
+				if(direction == 1){
+					PrintToConsole("The dial sticks in place. The door to the next room opens to the north\0");
+					// Remove the dial from play
+					current_room->objects[0]->state = OBJ_ACTED_ON;
+					// Open the door to the rail cipher rooms
+					current_room->north_room = GetRoomByToken(RTKN_RFCIPHR1);
+					current_state = GSTATE_MOVING;
+				}
+				else{
+					current_state = GSTATE_MOVING;
+				}
+				break;
+			}
+		}
 	}
 }

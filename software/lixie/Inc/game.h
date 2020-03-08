@@ -17,6 +17,8 @@ struct room* GetCurrentRoom();
 
 //Move the player
 void MovePlayer();
+//Print the text (room flavortext, item flavortext, etc) associated with the current room
+void PrintRoomText();
 //Use an item
 void UseItem();
 //Push an object
@@ -25,6 +27,7 @@ void PushObject();
 void PullObject();
 //Turn an object
 void TurnObject();
+void TurnObjectStateMachine(uint8_t direction);  // 0 for left, 1 for right
 //Print current location of the player location
 void PrintLocation();
 //Say a command
@@ -41,12 +44,14 @@ void MixItemsMixer(struct itm* itm1, struct itm* itm2); //Actually mix the items
 void PrintHelp();
 //Show the player inventory
 void PrintInventory();
-//Examine an item in the players inventory
-void ExamineItem();
-//Examine an object
-void ExamineObject();
+//Examine an item or an object
+void Examine();
 
 //All the game states
-#define GSTATE_NULL			0x00
-#define GSTATE_MOVING		0x01
+#define GSTATE_NULL					0x00
+#define GSTATE_MOVING				0x01
+#define GSTATE_STARTROOM_TURNDIAL1 	0x02
+#define GSTATE_STARTROOM_TURNDIAL2 	0x03
+#define GSTATE_STARTROOM_TURNDIAL3 	0x04
+#define GSTATE_STARTROOM_TURNDIAL4 	0x05
 #endif

@@ -356,6 +356,9 @@ void PrintToConsole(const char* c){
 	UserTxBufferFS[i + 1] = '\r';
 	UserTxBufferFS[i + 2] = '\n';
 	CDC_Transmit_FS(UserTxBufferFS, i + 3);
+	// Dumb delay since this is asynchronous
+	// TODO: Find a way to poll the USB device and only use it when things aren't being transmitted
+	HAL_Delay(1);
 }
 
 uint8_t CheckUserDataReady(){
@@ -382,6 +385,9 @@ void PrintStrToConsole(char* c){
 	UserTxBufferFS[i + 1] = '\r';
 	UserTxBufferFS[i + 2] = '\n';
 	CDC_Transmit_FS(UserTxBufferFS, i + 3);
+	// Dumb delay since this is asynchronous
+	// TODO: Find a way to poll the USB device and only use it when things aren't being transmitted
+	HAL_Delay(1);
 }
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 

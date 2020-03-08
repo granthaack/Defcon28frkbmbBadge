@@ -9,15 +9,12 @@
 //The number of game rooms
 #define ROOM_COUNT 			7
 //Room Tokens
-#define RTKN_TESTSTART		0x01
-#define RTKN_TESTNORTH		0x02
-#define RTKN_TESTEAST		0x03
-#define RTKN_TESTSOUTH		0x04
-#define RTKN_TESTWEST		0x05
-#define RTKN_TESTDOWN		0x06
-#define RTKN_TESTUP			0x07
+#define RTKN_STARTROOM				0x01
+#define RTKN_RFCIPHR1				0x02
+#define RTKN_RFCIPHR2				0x03
 
-//Flavor text for events
+
+//Alt flavor text for events
 static const char rm_flvr_teststart_up_unlocked[] = 	"It's the same old test room. A trapdoor has opened in the ceiling.";
 
 //Room Struct

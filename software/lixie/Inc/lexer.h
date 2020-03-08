@@ -36,7 +36,7 @@
 #define LTKN_TURND_RIGHT	0x17
 
 //Objects (0x20 to 0x4F)
-#define LTKN_OBJ_TEST		0x20
+#define LTKN_OBJ_STRTDIAL	0x20
 
 //Items (0x50 to 0x7F)
 #define LTKN_ITM_TEST		0x50
