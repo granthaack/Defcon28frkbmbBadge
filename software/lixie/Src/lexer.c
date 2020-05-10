@@ -93,21 +93,25 @@ uint8_t TokenizeUserInput(char *buf, uint8_t len){
 			game_tokens[token_count] = LTKN_OBJ_STRTDIAL;
 			buf_index = buf_index + 5;
 		}
-		else if(!strncmp(&buf[buf_index], "testitm1", 8)){
-			game_tokens[token_count] = LTKN_ITM_TEST1;
-			buf_index = buf_index + 9;
+		else if(!strncmp(&buf[buf_index], "paper", 5)){
+			game_tokens[token_count] = LTKN_ITM_PAPER;
+			buf_index = buf_index + 6;
 		}
-		else if(!strncmp(&buf[buf_index], "testitm2", 8)){
-			game_tokens[token_count] = LTKN_ITM_TEST2;
-			buf_index = buf_index + 9;
+		else if(!strncmp(&buf[buf_index], "tornpaper1", 10)){
+			game_tokens[token_count] = LTKN_ITM_TPAPER1;
+			buf_index = buf_index + 11;
 		}
-		else if(!strncmp(&buf[buf_index], "testitm", 7)){
-			game_tokens[token_count] = LTKN_ITM_TEST;
-			buf_index = buf_index + 8;
+		else if(!strncmp(&buf[buf_index], "tornpaper2", 10)){
+			game_tokens[token_count] = LTKN_ITM_TPAPER2;
+			buf_index = buf_index + 11;
 		}
-		else if(!strncmp(&buf[buf_index], "testcommand", 11)){
-			game_tokens[token_count] = LTKN_CMD_TEST;
-			buf_index = buf_index + 12;
+		else if(!strncmp(&buf[buf_index], "yggdrasil", 9)){
+			game_tokens[token_count] = LTKN_CMD_YGDRSL;
+			buf_index = buf_index + 10;
+		}
+		else if(!strncmp(&buf[buf_index], "totem", 5)){
+			game_tokens[token_count] = LTKN_ITM_TOTEM;
+			buf_index = buf_index + 6;
 		}
 		else{
 			return buf_index;

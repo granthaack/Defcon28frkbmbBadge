@@ -1,36 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:frkbmb28
+EESchema Schematic File Version 4
 LIBS:frkbmb28-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr User 15748 15748
 encoding utf-8
@@ -45,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L C C2
+L frkbmb28-rescue:C C2
 U 1 1 5D582576
 P 2000 1000
 F 0 "C2" H 2025 1100 50  0000 L CNN
@@ -56,7 +26,7 @@ F 3 "" H 2000 1000 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C3
+L frkbmb28-rescue:C C3
 U 1 1 5D5832A5
 P 1700 1000
 F 0 "C3" H 1725 1100 50  0000 L CNN
@@ -67,7 +37,7 @@ F 3 "" H 1700 1000 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L +3V3 #PWR01
+L power:+3V3 #PWR01
 U 1 1 5D5868A3
 P 1850 750
 F 0 "#PWR01" H 1850 600 50  0001 C CNN
@@ -78,7 +48,7 @@ F 3 "" H 1850 750 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L power:GND #PWR02
 U 1 1 5D58BD63
 P 1850 1200
 F 0 "#PWR02" H 1850 950 50  0001 C CNN
@@ -89,7 +59,7 @@ F 3 "" H 1850 1200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
+L frkbmb28-rescue:R R2
 U 1 1 5D58FEA8
 P 1400 1200
 F 0 "R2" V 1480 1200 50  0000 C CNN
@@ -100,7 +70,7 @@ F 3 "" H 1400 1200 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R3
+L frkbmb28-rescue:R R3
 U 1 1 5D59006D
 P 1200 1200
 F 0 "R3" V 1280 1200 50  0000 C CNN
@@ -113,7 +83,7 @@ $EndComp
 Text Notes 4050 11300 0    60   ~ 0
 Bridge these to remove\nI2C bus isolation
 $Comp
-L LIS2HH12 U2
+L frkbmb28:LIS2HH12 U2
 U 1 1 5D6019E4
 P 3800 8550
 F 0 "U2" H 3700 8300 60  0000 C CNN
@@ -128,7 +98,7 @@ SDA_ACC
 Text Label 2850 8300 2    60   ~ 0
 SCL_ACC
 $Comp
-L R R33
+L frkbmb28-rescue:R R33
 U 1 1 5D60CB0E
 P 2300 8350
 F 0 "R33" V 2380 8350 50  0000 C CNN
@@ -139,7 +109,7 @@ F 3 "" H 2300 8350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R32
+L frkbmb28-rescue:R R32
 U 1 1 5D60CCD1
 P 2100 8350
 F 0 "R32" V 2180 8350 50  0000 C CNN
@@ -150,7 +120,7 @@ F 3 "" H 2100 8350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR03
+L power:+3V3 #PWR03
 U 1 1 5D610073
 P 2200 8150
 F 0 "#PWR03" H 2200 8000 50  0001 C CNN
@@ -169,7 +139,7 @@ INT2
 Text Label 2850 8850 2    60   ~ 0
 INT1
 $Comp
-L GND #PWR04
+L power:GND #PWR04
 U 1 1 5D616B5E
 P 4450 9000
 F 0 "#PWR04" H 4450 8750 50  0001 C CNN
@@ -180,7 +150,7 @@ F 3 "" H 4450 9000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C4
+L frkbmb28-rescue:C C4
 U 1 1 5D61A84B
 P 4750 8450
 F 0 "C4" H 4775 8550 50  0000 L CNN
@@ -191,7 +161,7 @@ F 3 "" H 4750 8450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR05
+L power:+3V3 #PWR05
 U 1 1 5D61CF9B
 P 5100 8200
 F 0 "#PWR05" H 5100 8050 50  0001 C CNN
@@ -202,7 +172,7 @@ F 3 "" H 5100 8200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR06
+L power:+3V3 #PWR06
 U 1 1 5D6264F0
 P 3300 10450
 F 0 "#PWR06" H 3300 10300 50  0001 C CNN
@@ -213,7 +183,7 @@ F 3 "" H 3300 10450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR07
+L power:GND #PWR07
 U 1 1 5D626CC6
 P 3300 10550
 F 0 "#PWR07" H 3300 10300 50  0001 C CNN
@@ -244,7 +214,7 @@ INT1
 Text Label 3100 11950 2    60   ~ 0
 INT2
 $Comp
-L CONN_01X03 P4
+L frkbmb28-rescue:CONN_01X03 P4
 U 1 1 5D51270E
 P 4150 10950
 F 0 "P4" H 4150 11150 50  0000 C CNN
@@ -255,7 +225,7 @@ F 3 "" H 4150 10950 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L CONN_01X03 P3
+L frkbmb28-rescue:CONN_01X03 P3
 U 1 1 5D513075
 P 4150 10550
 F 0 "P3" H 4150 10750 50  0000 C CNN
@@ -278,7 +248,7 @@ SCL_ACC
 Text Label 4600 10450 0    60   ~ 0
 SCL_SAO
 $Comp
-L CONN_02X03 P1
+L frkbmb28-rescue:CONN_02X03 P1
 U 1 1 5D518A20
 P 3800 6550
 F 0 "P1" H 3800 6750 50  0000 C CNN
@@ -289,7 +259,7 @@ F 3 "" H 3800 5350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR08
+L power:+3V3 #PWR08
 U 1 1 5D51A768
 P 3400 6450
 F 0 "#PWR08" H 3400 6300 50  0001 C CNN
@@ -300,7 +270,7 @@ F 3 "" H 3400 6450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L power:GND #PWR09
 U 1 1 5D51A905
 P 4200 6450
 F 0 "#PWR09" H 4200 6200 50  0001 C CNN
@@ -319,7 +289,7 @@ GPIO2
 Text Label 4600 6550 0    60   ~ 0
 SCL_SAO
 $Comp
-L R R24
+L frkbmb28-rescue:R R24
 U 1 1 5D51F673
 P 3050 6350
 F 0 "R24" V 3130 6350 50  0000 C CNN
@@ -330,7 +300,7 @@ F 3 "" H 3050 6350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R25
+L frkbmb28-rescue:R R25
 U 1 1 5D521CEE
 P 4550 6350
 F 0 "R25" V 4630 6350 50  0000 C CNN
@@ -341,7 +311,7 @@ F 3 "" H 4550 6350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR010
+L power:+3V3 #PWR010
 U 1 1 5D5245F9
 P 3050 6150
 F 0 "#PWR010" H 3050 6000 50  0001 C CNN
@@ -352,7 +322,7 @@ F 3 "" H 3050 6150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR011
+L power:+3V3 #PWR011
 U 1 1 5D52479C
 P 4550 6150
 F 0 "#PWR011" H 4550 6000 50  0001 C CNN
@@ -377,7 +347,7 @@ GPIO1
 Text Label 3100 12350 2    60   ~ 0
 GPIO2
 $Comp
-L IS31FL3731 U1
+L frkbmb28:IS31FL3731 U1
 U 1 1 5D55161B
 P 3250 1700
 F 0 "U1" H 3250 900 60  0000 C CNN
@@ -388,7 +358,7 @@ F 3 "" H 3250 800 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3V3 #PWR012
+L power:+3V3 #PWR012
 U 1 1 5D557A8A
 P 1200 800
 F 0 "#PWR012" H 1200 650 50  0001 C CNN
@@ -403,7 +373,7 @@ SDA_MTX
 Text Label 900  1550 2    60   ~ 0
 SCL_MTX
 $Comp
-L R R1
+L frkbmb28-rescue:R R1
 U 1 1 5D559611
 P 1000 1200
 F 0 "R1" V 1080 1200 50  0000 C CNN
@@ -414,7 +384,7 @@ F 3 "" H 1000 1200 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR013
+L power:GND #PWR013
 U 1 1 5D55A7EE
 P 2350 1450
 F 0 "#PWR013" H 2350 1200 50  0001 C CNN
@@ -425,7 +395,7 @@ F 3 "" H 2350 1450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R4
+L frkbmb28-rescue:R R4
 U 1 1 5D55A90A
 P 1200 1900
 F 0 "R4" V 1280 1900 50  0000 C CNN
@@ -440,7 +410,7 @@ INTB
 Text Label 900  1750 2    60   ~ 0
 SDB
 $Comp
-L GND #PWR014
+L power:GND #PWR014
 U 1 1 5D55CD2D
 P 1200 2100
 F 0 "#PWR014" H 1200 1850 50  0001 C CNN
@@ -451,7 +421,7 @@ F 3 "" H 1200 2100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R5
+L frkbmb28-rescue:R R5
 U 1 1 5D55CECC
 P 2000 2100
 F 0 "R5" V 2080 2100 50  0000 C CNN
@@ -462,7 +432,7 @@ F 3 "" H 2000 2100 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR015
+L power:GND #PWR015
 U 1 1 5D55D07C
 P 2000 2450
 F 0 "#PWR015" H 2000 2200 50  0001 C CNN
@@ -473,7 +443,7 @@ F 3 "" H 2000 2450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C1
+L frkbmb28-rescue:C C1
 U 1 1 5D55DF83
 P 2350 2200
 F 0 "C1" H 2375 2300 50  0000 L CNN
@@ -484,7 +454,7 @@ F 3 "" H 2350 2200 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C5
+L frkbmb28-rescue:C C5
 U 1 1 5D55E86B
 P 1650 2750
 F 0 "C5" H 1675 2850 50  0000 L CNN
@@ -497,7 +467,7 @@ $EndComp
 Text Label 900  1850 2    60   ~ 0
 AUD
 $Comp
-L LED D1
+L frkbmb28-rescue:LED D1
 U 1 1 5D55FAF8
 P 5400 1050
 F 0 "D1" H 5400 1150 50  0000 C CNN
@@ -508,7 +478,7 @@ F 3 "" H 5400 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D2
+L frkbmb28-rescue:LED D2
 U 1 1 5D55FF5D
 P 5800 1050
 F 0 "D2" H 5800 1150 50  0000 C CNN
@@ -519,7 +489,7 @@ F 3 "" H 5800 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D3
+L frkbmb28-rescue:LED D3
 U 1 1 5D55FFC8
 P 6200 1050
 F 0 "D3" H 6200 1150 50  0000 C CNN
@@ -530,7 +500,7 @@ F 3 "" H 6200 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D4
+L frkbmb28-rescue:LED D4
 U 1 1 5D56002E
 P 6600 1050
 F 0 "D4" H 6600 1150 50  0000 C CNN
@@ -541,7 +511,7 @@ F 3 "" H 6600 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D5
+L frkbmb28-rescue:LED D5
 U 1 1 5D56009B
 P 7000 1050
 F 0 "D5" H 7000 1150 50  0000 C CNN
@@ -552,7 +522,7 @@ F 3 "" H 7000 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D6
+L frkbmb28-rescue:LED D6
 U 1 1 5D560107
 P 7400 1050
 F 0 "D6" H 7400 1150 50  0000 C CNN
@@ -563,7 +533,7 @@ F 3 "" H 7400 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D7
+L frkbmb28-rescue:LED D7
 U 1 1 5D56017A
 P 7800 1050
 F 0 "D7" H 7800 1150 50  0000 C CNN
@@ -574,7 +544,7 @@ F 3 "" H 7800 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D8
+L frkbmb28-rescue:LED D8
 U 1 1 5D5601EC
 P 8200 1050
 F 0 "D8" H 8200 1150 50  0000 C CNN
@@ -585,7 +555,7 @@ F 3 "" H 8200 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D17
+L frkbmb28-rescue:LED D17
 U 1 1 5D560511
 P 5400 1550
 F 0 "D17" H 5400 1650 50  0000 C CNN
@@ -596,7 +566,7 @@ F 3 "" H 5400 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D18
+L frkbmb28-rescue:LED D18
 U 1 1 5D560517
 P 5800 1550
 F 0 "D18" H 5800 1650 50  0000 C CNN
@@ -607,7 +577,7 @@ F 3 "" H 5800 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D19
+L frkbmb28-rescue:LED D19
 U 1 1 5D56051D
 P 6200 1550
 F 0 "D19" H 6200 1650 50  0000 C CNN
@@ -618,7 +588,7 @@ F 3 "" H 6200 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D20
+L frkbmb28-rescue:LED D20
 U 1 1 5D560523
 P 6600 1550
 F 0 "D20" H 6600 1650 50  0000 C CNN
@@ -629,7 +599,7 @@ F 3 "" H 6600 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D21
+L frkbmb28-rescue:LED D21
 U 1 1 5D560529
 P 7000 1550
 F 0 "D21" H 7000 1650 50  0000 C CNN
@@ -640,7 +610,7 @@ F 3 "" H 7000 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D22
+L frkbmb28-rescue:LED D22
 U 1 1 5D56052F
 P 7400 1550
 F 0 "D22" H 7400 1650 50  0000 C CNN
@@ -651,7 +621,7 @@ F 3 "" H 7400 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D23
+L frkbmb28-rescue:LED D23
 U 1 1 5D560535
 P 7800 1550
 F 0 "D23" H 7800 1650 50  0000 C CNN
@@ -662,7 +632,7 @@ F 3 "" H 7800 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D24
+L frkbmb28-rescue:LED D24
 U 1 1 5D56053B
 P 8200 1550
 F 0 "D24" H 8200 1650 50  0000 C CNN
@@ -673,7 +643,7 @@ F 3 "" H 8200 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D33
+L frkbmb28-rescue:LED D33
 U 1 1 5D56093D
 P 5400 2050
 F 0 "D33" H 5400 2150 50  0000 C CNN
@@ -684,7 +654,7 @@ F 3 "" H 5400 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D34
+L frkbmb28-rescue:LED D34
 U 1 1 5D560943
 P 5800 2050
 F 0 "D34" H 5800 2150 50  0000 C CNN
@@ -695,7 +665,7 @@ F 3 "" H 5800 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D35
+L frkbmb28-rescue:LED D35
 U 1 1 5D560949
 P 6200 2050
 F 0 "D35" H 6200 2150 50  0000 C CNN
@@ -706,7 +676,7 @@ F 3 "" H 6200 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D36
+L frkbmb28-rescue:LED D36
 U 1 1 5D56094F
 P 6600 2050
 F 0 "D36" H 6600 2150 50  0000 C CNN
@@ -717,7 +687,7 @@ F 3 "" H 6600 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D37
+L frkbmb28-rescue:LED D37
 U 1 1 5D560955
 P 7000 2050
 F 0 "D37" H 7000 2150 50  0000 C CNN
@@ -728,7 +698,7 @@ F 3 "" H 7000 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D38
+L frkbmb28-rescue:LED D38
 U 1 1 5D56095B
 P 7400 2050
 F 0 "D38" H 7400 2150 50  0000 C CNN
@@ -739,7 +709,7 @@ F 3 "" H 7400 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D39
+L frkbmb28-rescue:LED D39
 U 1 1 5D560961
 P 7800 2050
 F 0 "D39" H 7800 2150 50  0000 C CNN
@@ -750,7 +720,7 @@ F 3 "" H 7800 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D40
+L frkbmb28-rescue:LED D40
 U 1 1 5D560967
 P 8200 2050
 F 0 "D40" H 8200 2150 50  0000 C CNN
@@ -761,7 +731,7 @@ F 3 "" H 8200 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D49
+L frkbmb28-rescue:LED D49
 U 1 1 5D56096D
 P 5400 2550
 F 0 "D49" H 5400 2650 50  0000 C CNN
@@ -772,7 +742,7 @@ F 3 "" H 5400 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D50
+L frkbmb28-rescue:LED D50
 U 1 1 5D560973
 P 5800 2550
 F 0 "D50" H 5800 2650 50  0000 C CNN
@@ -783,7 +753,7 @@ F 3 "" H 5800 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D51
+L frkbmb28-rescue:LED D51
 U 1 1 5D560979
 P 6200 2550
 F 0 "D51" H 6200 2650 50  0000 C CNN
@@ -794,7 +764,7 @@ F 3 "" H 6200 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D52
+L frkbmb28-rescue:LED D52
 U 1 1 5D56097F
 P 6600 2550
 F 0 "D52" H 6600 2650 50  0000 C CNN
@@ -805,7 +775,7 @@ F 3 "" H 6600 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D53
+L frkbmb28-rescue:LED D53
 U 1 1 5D560985
 P 7000 2550
 F 0 "D53" H 7000 2650 50  0000 C CNN
@@ -816,7 +786,7 @@ F 3 "" H 7000 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D54
+L frkbmb28-rescue:LED D54
 U 1 1 5D56098B
 P 7400 2550
 F 0 "D54" H 7400 2650 50  0000 C CNN
@@ -827,7 +797,7 @@ F 3 "" H 7400 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D55
+L frkbmb28-rescue:LED D55
 U 1 1 5D560991
 P 7800 2550
 F 0 "D55" H 7800 2650 50  0000 C CNN
@@ -838,7 +808,7 @@ F 3 "" H 7800 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D56
+L frkbmb28-rescue:LED D56
 U 1 1 5D560997
 P 8200 2550
 F 0 "D56" H 8200 2650 50  0000 C CNN
@@ -849,7 +819,7 @@ F 3 "" H 8200 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D65
+L frkbmb28-rescue:LED D65
 U 1 1 5D561639
 P 5400 3050
 F 0 "D65" H 5400 3150 50  0000 C CNN
@@ -860,7 +830,7 @@ F 3 "" H 5400 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D66
+L frkbmb28-rescue:LED D66
 U 1 1 5D56163F
 P 5800 3050
 F 0 "D66" H 5800 3150 50  0000 C CNN
@@ -871,7 +841,7 @@ F 3 "" H 5800 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D67
+L frkbmb28-rescue:LED D67
 U 1 1 5D561645
 P 6200 3050
 F 0 "D67" H 6200 3150 50  0000 C CNN
@@ -882,7 +852,7 @@ F 3 "" H 6200 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D68
+L frkbmb28-rescue:LED D68
 U 1 1 5D56164B
 P 6600 3050
 F 0 "D68" H 6600 3150 50  0000 C CNN
@@ -893,7 +863,7 @@ F 3 "" H 6600 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D69
+L frkbmb28-rescue:LED D69
 U 1 1 5D561651
 P 7000 3050
 F 0 "D69" H 7000 3150 50  0000 C CNN
@@ -904,7 +874,7 @@ F 3 "" H 7000 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D70
+L frkbmb28-rescue:LED D70
 U 1 1 5D561657
 P 7400 3050
 F 0 "D70" H 7400 3150 50  0000 C CNN
@@ -915,7 +885,7 @@ F 3 "" H 7400 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D71
+L frkbmb28-rescue:LED D71
 U 1 1 5D56165D
 P 7800 3050
 F 0 "D71" H 7800 3150 50  0000 C CNN
@@ -926,7 +896,7 @@ F 3 "" H 7800 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D72
+L frkbmb28-rescue:LED D72
 U 1 1 5D561663
 P 8200 3050
 F 0 "D72" H 8200 3150 50  0000 C CNN
@@ -937,7 +907,7 @@ F 3 "" H 8200 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D81
+L frkbmb28-rescue:LED D81
 U 1 1 5D561669
 P 5400 3550
 F 0 "D81" H 5400 3650 50  0000 C CNN
@@ -948,7 +918,7 @@ F 3 "" H 5400 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D82
+L frkbmb28-rescue:LED D82
 U 1 1 5D56166F
 P 5800 3550
 F 0 "D82" H 5800 3650 50  0000 C CNN
@@ -959,7 +929,7 @@ F 3 "" H 5800 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D83
+L frkbmb28-rescue:LED D83
 U 1 1 5D561675
 P 6200 3550
 F 0 "D83" H 6200 3650 50  0000 C CNN
@@ -970,7 +940,7 @@ F 3 "" H 6200 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D84
+L frkbmb28-rescue:LED D84
 U 1 1 5D56167B
 P 6600 3550
 F 0 "D84" H 6600 3650 50  0000 C CNN
@@ -981,7 +951,7 @@ F 3 "" H 6600 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D85
+L frkbmb28-rescue:LED D85
 U 1 1 5D561681
 P 7000 3550
 F 0 "D85" H 7000 3650 50  0000 C CNN
@@ -992,7 +962,7 @@ F 3 "" H 7000 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D86
+L frkbmb28-rescue:LED D86
 U 1 1 5D561687
 P 7400 3550
 F 0 "D86" H 7400 3650 50  0000 C CNN
@@ -1003,7 +973,7 @@ F 3 "" H 7400 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D87
+L frkbmb28-rescue:LED D87
 U 1 1 5D56168D
 P 7800 3550
 F 0 "D87" H 7800 3650 50  0000 C CNN
@@ -1014,7 +984,7 @@ F 3 "" H 7800 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D88
+L frkbmb28-rescue:LED D88
 U 1 1 5D561693
 P 8200 3550
 F 0 "D88" H 8200 3650 50  0000 C CNN
@@ -1025,7 +995,7 @@ F 3 "" H 8200 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D97
+L frkbmb28-rescue:LED D97
 U 1 1 5D561699
 P 5400 4050
 F 0 "D97" H 5400 4150 50  0000 C CNN
@@ -1036,7 +1006,7 @@ F 3 "" H 5400 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D98
+L frkbmb28-rescue:LED D98
 U 1 1 5D56169F
 P 5800 4050
 F 0 "D98" H 5800 4150 50  0000 C CNN
@@ -1047,7 +1017,7 @@ F 3 "" H 5800 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D99
+L frkbmb28-rescue:LED D99
 U 1 1 5D5616A5
 P 6200 4050
 F 0 "D99" H 6200 4150 50  0000 C CNN
@@ -1058,7 +1028,7 @@ F 3 "" H 6200 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D100
+L frkbmb28-rescue:LED D100
 U 1 1 5D5616AB
 P 6600 4050
 F 0 "D100" H 6600 4150 50  0000 C CNN
@@ -1069,7 +1039,7 @@ F 3 "" H 6600 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D101
+L frkbmb28-rescue:LED D101
 U 1 1 5D5616B1
 P 7000 4050
 F 0 "D101" H 7000 4150 50  0000 C CNN
@@ -1080,7 +1050,7 @@ F 3 "" H 7000 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D102
+L frkbmb28-rescue:LED D102
 U 1 1 5D5616B7
 P 7400 4050
 F 0 "D102" H 7400 4150 50  0000 C CNN
@@ -1091,7 +1061,7 @@ F 3 "" H 7400 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D103
+L frkbmb28-rescue:LED D103
 U 1 1 5D5616BD
 P 7800 4050
 F 0 "D103" H 7800 4150 50  0000 C CNN
@@ -1102,7 +1072,7 @@ F 3 "" H 7800 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D104
+L frkbmb28-rescue:LED D104
 U 1 1 5D5616C3
 P 8200 4050
 F 0 "D104" H 8200 4150 50  0000 C CNN
@@ -1113,7 +1083,7 @@ F 3 "" H 8200 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D113
+L frkbmb28-rescue:LED D113
 U 1 1 5D5616C9
 P 5400 4550
 F 0 "D113" H 5400 4650 50  0000 C CNN
@@ -1124,7 +1094,7 @@ F 3 "" H 5400 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D114
+L frkbmb28-rescue:LED D114
 U 1 1 5D5616CF
 P 5800 4550
 F 0 "D114" H 5800 4650 50  0000 C CNN
@@ -1135,7 +1105,7 @@ F 3 "" H 5800 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D115
+L frkbmb28-rescue:LED D115
 U 1 1 5D5616D5
 P 6200 4550
 F 0 "D115" H 6200 4650 50  0000 C CNN
@@ -1146,7 +1116,7 @@ F 3 "" H 6200 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D116
+L frkbmb28-rescue:LED D116
 U 1 1 5D5616DB
 P 6600 4550
 F 0 "D116" H 6600 4650 50  0000 C CNN
@@ -1157,7 +1127,7 @@ F 3 "" H 6600 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D117
+L frkbmb28-rescue:LED D117
 U 1 1 5D5616E1
 P 7000 4550
 F 0 "D117" H 7000 4650 50  0000 C CNN
@@ -1168,7 +1138,7 @@ F 3 "" H 7000 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D118
+L frkbmb28-rescue:LED D118
 U 1 1 5D5616E7
 P 7400 4550
 F 0 "D118" H 7400 4650 50  0000 C CNN
@@ -1179,7 +1149,7 @@ F 3 "" H 7400 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D119
+L frkbmb28-rescue:LED D119
 U 1 1 5D5616ED
 P 7800 4550
 F 0 "D119" H 7800 4650 50  0000 C CNN
@@ -1190,7 +1160,7 @@ F 3 "" H 7800 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D120
+L frkbmb28-rescue:LED D120
 U 1 1 5D5616F3
 P 8200 4550
 F 0 "D120" H 8200 4650 50  0000 C CNN
@@ -1201,7 +1171,7 @@ F 3 "" H 8200 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D129
+L frkbmb28-rescue:LED D129
 U 1 1 5D561955
 P 5400 5050
 F 0 "D129" H 5400 5150 50  0000 C CNN
@@ -1212,7 +1182,7 @@ F 3 "" H 5400 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D130
+L frkbmb28-rescue:LED D130
 U 1 1 5D56195B
 P 5800 5050
 F 0 "D130" H 5800 5150 50  0000 C CNN
@@ -1223,7 +1193,7 @@ F 3 "" H 5800 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D131
+L frkbmb28-rescue:LED D131
 U 1 1 5D561961
 P 6200 5050
 F 0 "D131" H 6200 5150 50  0000 C CNN
@@ -1234,7 +1204,7 @@ F 3 "" H 6200 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D132
+L frkbmb28-rescue:LED D132
 U 1 1 5D561967
 P 6600 5050
 F 0 "D132" H 6600 5150 50  0000 C CNN
@@ -1245,7 +1215,7 @@ F 3 "" H 6600 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D133
+L frkbmb28-rescue:LED D133
 U 1 1 5D56196D
 P 7000 5050
 F 0 "D133" H 7000 5150 50  0000 C CNN
@@ -1256,7 +1226,7 @@ F 3 "" H 7000 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D134
+L frkbmb28-rescue:LED D134
 U 1 1 5D561973
 P 7400 5050
 F 0 "D134" H 7400 5150 50  0000 C CNN
@@ -1267,7 +1237,7 @@ F 3 "" H 7400 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D135
+L frkbmb28-rescue:LED D135
 U 1 1 5D561979
 P 7800 5050
 F 0 "D135" H 7800 5150 50  0000 C CNN
@@ -1278,7 +1248,7 @@ F 3 "" H 7800 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D136
+L frkbmb28-rescue:LED D136
 U 1 1 5D56197F
 P 8200 5050
 F 0 "D136" H 8200 5150 50  0000 C CNN
@@ -1325,18 +1295,14 @@ CA2
 Text Label 4150 1650 0    60   ~ 0
 CA1
 Connection ~ 2000 1150
-Connection ~ 1700 1150
-Connection ~ 1700 850 
 Wire Wire Line
 	3150 8200 2850 8200
 Wire Wire Line
 	3150 8300 2850 8300
-Connection ~ 2850 8200
-Connection ~ 2850 8300
 Wire Wire Line
 	3050 8400 3150 8400
 Wire Wire Line
-	2100 8200 2300 8200
+	2100 8200 2200 8200
 Wire Wire Line
 	2200 8150 2200 8200
 Connection ~ 2200 8200
@@ -1347,15 +1313,11 @@ Wire Wire Line
 Wire Wire Line
 	3150 8650 3150 8500
 Wire Wire Line
-	1950 8650 3150 8650
+	1950 8650 2300 8650
 Wire Wire Line
 	3050 8550 3050 8400
 Wire Wire Line
-	1950 8550 3050 8550
-Connection ~ 2850 8750
-Connection ~ 2850 8850
-Connection ~ 1950 8550
-Connection ~ 1950 8650
+	1950 8550 2100 8550
 Wire Wire Line
 	2100 8500 2100 8550
 Connection ~ 2100 8550
@@ -1363,14 +1325,14 @@ Wire Wire Line
 	2300 8500 2300 8650
 Connection ~ 2300 8650
 Wire Wire Line
-	4450 8500 4450 9000
+	4450 8500 4450 8600
 Connection ~ 4450 8600
 Connection ~ 4450 8700
 Connection ~ 4450 8850
 Wire Wire Line
 	4450 8300 4750 8300
 Wire Wire Line
-	4450 8200 5100 8200
+	4450 8200 4750 8200
 Wire Wire Line
 	4750 8300 4750 8200
 Wire Wire Line
@@ -1396,16 +1358,6 @@ Wire Wire Line
 	3600 11850 3100 11850
 Wire Wire Line
 	3600 11950 3100 11950
-Connection ~ 3100 10950
-Connection ~ 3100 11050
-Connection ~ 3100 11150
-Connection ~ 3100 11250
-Connection ~ 3100 11450
-Connection ~ 3100 11550
-Connection ~ 3100 11650
-Connection ~ 3100 11750
-Connection ~ 3100 11850
-Connection ~ 3100 11950
 Wire Wire Line
 	3300 10450 3600 10450
 Wire Wire Line
@@ -1428,28 +1380,18 @@ Wire Wire Line
 	3550 6650 3400 6650
 Wire Wire Line
 	4050 6450 4200 6450
-Connection ~ 4600 10450
-Connection ~ 4600 10550
-Connection ~ 4600 10650
-Connection ~ 4600 10850
-Connection ~ 4600 10950
-Connection ~ 4600 11050
-Connection ~ 3000 6550
-Connection ~ 3400 6650
-Connection ~ 4200 6650
 Wire Wire Line
 	4050 6650 4200 6650
 Wire Wire Line
 	3050 6500 3050 6550
 Connection ~ 3050 6550
 Wire Wire Line
-	4050 6550 4600 6550
+	4050 6550 4550 6550
 Wire Wire Line
 	4550 6550 4550 6500
 Connection ~ 4550 6550
-Connection ~ 4600 6550
 Wire Wire Line
-	3000 6550 3550 6550
+	3000 6550 3050 6550
 Wire Wire Line
 	3050 6150 3050 6200
 Wire Wire Line
@@ -1462,26 +1404,22 @@ Wire Wire Line
 	3600 12250 3100 12250
 Wire Wire Line
 	3600 12350 3100 12350
-Connection ~ 3100 12050
-Connection ~ 3100 12150
-Connection ~ 3100 12250
-Connection ~ 3100 12350
 Wire Wire Line
 	3300 10650 3600 10650
 Wire Wire Line
 	3300 10750 3600 10750
 Wire Wire Line
-	3300 10550 3300 10850
+	3300 10550 3300 10650
 Connection ~ 3300 10650
 Wire Wire Line
-	1700 850  2550 850 
+	1700 850  1850 850 
 Connection ~ 2000 850 
 Connection ~ 1850 850 
 Wire Wire Line
-	1700 1150 2150 1150
+	1700 1150 1850 1150
 Connection ~ 1850 1150
 Wire Wire Line
-	2150 1150 2150 950 
+	2150 1150 2150 1050
 Wire Wire Line
 	2150 950  2550 950 
 Wire Wire Line
@@ -1496,13 +1434,13 @@ Wire Wire Line
 Wire Wire Line
 	2000 1250 2000 1450
 Wire Wire Line
-	2000 1450 900  1450
+	2000 1450 1200 1450
 Wire Wire Line
 	2550 1350 2050 1350
 Wire Wire Line
 	2050 1350 2050 1550
 Wire Wire Line
-	2050 1550 900  1550
+	2050 1550 1400 1550
 Wire Wire Line
 	1400 1350 1400 1550
 Connection ~ 1400 1550
@@ -1510,9 +1448,9 @@ Wire Wire Line
 	1200 1350 1200 1450
 Connection ~ 1200 1450
 Wire Wire Line
-	1000 1050 1400 1050
+	1000 1050 1200 1050
 Wire Wire Line
-	900  1650 2550 1650
+	900  1650 1000 1650
 Connection ~ 1200 1050
 Wire Wire Line
 	1200 1050 1200 800 
@@ -1523,14 +1461,14 @@ Wire Wire Line
 Wire Wire Line
 	2350 1400 2350 1450
 Wire Wire Line
-	900  1750 2550 1750
+	900  1750 1200 1750
 Wire Wire Line
 	1000 1350 1000 1650
 Connection ~ 1000 1650
 Wire Wire Line
 	2550 1950 2000 1950
 Wire Wire Line
-	2000 2250 2000 2450
+	2000 2250 2000 2350
 Wire Wire Line
 	2550 2050 2350 2050
 Wire Wire Line
@@ -1549,28 +1487,28 @@ Wire Wire Line
 Wire Wire Line
 	1000 1850 900  1850
 Wire Wire Line
-	4750 900  8200 900 
+	4750 900  5200 900 
 Connection ~ 7800 900 
 Connection ~ 7400 900 
 Connection ~ 7000 900 
 Connection ~ 6600 900 
 Connection ~ 6200 900 
 Wire Wire Line
-	4750 1400 8200 1400
+	4750 1400 5400 1400
 Wire Wire Line
-	4750 1900 8200 1900
+	4750 1900 5400 1900
 Wire Wire Line
-	4750 2400 8200 2400
+	4750 2400 5400 2400
 Wire Wire Line
-	4750 2900 8200 2900
+	4750 2900 5400 2900
 Wire Wire Line
-	4750 3400 8200 3400
+	4750 3400 5400 3400
 Wire Wire Line
-	4750 3900 8200 3900
+	4750 3900 5400 3900
 Wire Wire Line
-	4750 4400 8200 4400
+	4750 4400 5400 4400
 Wire Wire Line
-	4750 4900 8400 4900
+	4750 4900 5400 4900
 Connection ~ 7800 4900
 Connection ~ 7400 4900
 Connection ~ 7000 4900
@@ -1650,7 +1588,7 @@ Wire Wire Line
 Wire Wire Line
 	5400 1700 5200 1700
 Wire Wire Line
-	5200 900  5200 5200
+	5200 900  5200 1700
 Connection ~ 5200 900 
 Wire Wire Line
 	5200 2200 5400 2200
@@ -1676,7 +1614,7 @@ Connection ~ 5200 4700
 Wire Wire Line
 	5400 1200 5600 1200
 Wire Wire Line
-	5600 1200 5600 5200
+	5600 1200 5600 1400
 Connection ~ 5600 1400
 Wire Wire Line
 	5600 2200 5800 2200
@@ -1701,7 +1639,7 @@ Connection ~ 5600 4700
 Wire Wire Line
 	5800 1200 6000 1200
 Wire Wire Line
-	6000 1200 6000 5200
+	6000 1200 6000 1700
 Wire Wire Line
 	6000 5200 6200 5200
 Wire Wire Line
@@ -1710,7 +1648,7 @@ Connection ~ 6000 1700
 Wire Wire Line
 	6200 1200 6400 1200
 Wire Wire Line
-	6400 1200 6400 5200
+	6400 1200 6400 1700
 Wire Wire Line
 	6400 5200 6600 5200
 Wire Wire Line
@@ -1737,7 +1675,7 @@ Connection ~ 6000 4700
 Wire Wire Line
 	6600 1200 6800 1200
 Wire Wire Line
-	6800 1200 6800 5200
+	6800 1200 6800 1700
 Wire Wire Line
 	6800 5200 7000 5200
 Wire Wire Line
@@ -1764,7 +1702,7 @@ Connection ~ 6400 4700
 Wire Wire Line
 	7000 1200 7200 1200
 Wire Wire Line
-	7200 1200 7200 5200
+	7200 1200 7200 1700
 Wire Wire Line
 	7200 5200 7400 5200
 Wire Wire Line
@@ -1791,7 +1729,7 @@ Connection ~ 6800 4700
 Wire Wire Line
 	7400 1200 7600 1200
 Wire Wire Line
-	7600 1200 7600 5200
+	7600 1200 7600 1700
 Wire Wire Line
 	7600 5200 7800 5200
 Wire Wire Line
@@ -1802,9 +1740,6 @@ Wire Wire Line
 Connection ~ 7600 2200
 Wire Wire Line
 	7400 2700 7600 2700
-Wire Wire Line
-	7600 2700 7600 2750
-Connection ~ 7600 2750
 Wire Wire Line
 	7400 3200 7600 3200
 Connection ~ 7600 3200
@@ -1820,7 +1755,7 @@ Connection ~ 7200 4700
 Wire Wire Line
 	7800 1200 8000 1200
 Wire Wire Line
-	8000 1200 8000 5200
+	8000 1200 8000 1700
 Wire Wire Line
 	8000 5200 8200 5200
 Wire Wire Line
@@ -1847,7 +1782,7 @@ Connection ~ 7600 4700
 Wire Wire Line
 	8200 1200 8400 1200
 Wire Wire Line
-	8400 1200 8400 4900
+	8400 1200 8400 1700
 Connection ~ 8200 4900
 Wire Wire Line
 	8200 4700 8400 4700
@@ -1877,7 +1812,7 @@ Connection ~ 7200 3400
 Connection ~ 7600 3900
 Connection ~ 8000 4400
 $Comp
-L LED D9
+L frkbmb28-rescue:LED D9
 U 1 1 5D61ABDC
 P 9450 1050
 F 0 "D9" H 9450 1150 50  0000 C CNN
@@ -1888,7 +1823,7 @@ F 3 "" H 9450 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D10
+L frkbmb28-rescue:LED D10
 U 1 1 5D61ABE2
 P 9850 1050
 F 0 "D10" H 9850 1150 50  0000 C CNN
@@ -1899,7 +1834,7 @@ F 3 "" H 9850 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D11
+L frkbmb28-rescue:LED D11
 U 1 1 5D61ABE8
 P 10250 1050
 F 0 "D11" H 10250 1150 50  0000 C CNN
@@ -1910,7 +1845,7 @@ F 3 "" H 10250 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D12
+L frkbmb28-rescue:LED D12
 U 1 1 5D61ABEE
 P 10650 1050
 F 0 "D12" H 10650 1150 50  0000 C CNN
@@ -1921,7 +1856,7 @@ F 3 "" H 10650 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D13
+L frkbmb28-rescue:LED D13
 U 1 1 5D61ABF4
 P 11050 1050
 F 0 "D13" H 11050 1150 50  0000 C CNN
@@ -1932,7 +1867,7 @@ F 3 "" H 11050 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D14
+L frkbmb28-rescue:LED D14
 U 1 1 5D61ABFA
 P 11450 1050
 F 0 "D14" H 11450 1150 50  0000 C CNN
@@ -1943,7 +1878,7 @@ F 3 "" H 11450 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D15
+L frkbmb28-rescue:LED D15
 U 1 1 5D61AC00
 P 11850 1050
 F 0 "D15" H 11850 1150 50  0000 C CNN
@@ -1954,7 +1889,7 @@ F 3 "" H 11850 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D16
+L frkbmb28-rescue:LED D16
 U 1 1 5D61AC06
 P 12250 1050
 F 0 "D16" H 12250 1150 50  0000 C CNN
@@ -1965,7 +1900,7 @@ F 3 "" H 12250 1050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D25
+L frkbmb28-rescue:LED D25
 U 1 1 5D61AC0C
 P 9450 1550
 F 0 "D25" H 9450 1650 50  0000 C CNN
@@ -1976,7 +1911,7 @@ F 3 "" H 9450 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D26
+L frkbmb28-rescue:LED D26
 U 1 1 5D61AC12
 P 9850 1550
 F 0 "D26" H 9850 1650 50  0000 C CNN
@@ -1987,7 +1922,7 @@ F 3 "" H 9850 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D27
+L frkbmb28-rescue:LED D27
 U 1 1 5D61AC18
 P 10250 1550
 F 0 "D27" H 10250 1650 50  0000 C CNN
@@ -1998,7 +1933,7 @@ F 3 "" H 10250 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D28
+L frkbmb28-rescue:LED D28
 U 1 1 5D61AC1E
 P 10650 1550
 F 0 "D28" H 10650 1650 50  0000 C CNN
@@ -2009,7 +1944,7 @@ F 3 "" H 10650 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D29
+L frkbmb28-rescue:LED D29
 U 1 1 5D61AC24
 P 11050 1550
 F 0 "D29" H 11050 1650 50  0000 C CNN
@@ -2020,7 +1955,7 @@ F 3 "" H 11050 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D30
+L frkbmb28-rescue:LED D30
 U 1 1 5D61AC2A
 P 11450 1550
 F 0 "D30" H 11450 1650 50  0000 C CNN
@@ -2031,7 +1966,7 @@ F 3 "" H 11450 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D31
+L frkbmb28-rescue:LED D31
 U 1 1 5D61AC30
 P 11850 1550
 F 0 "D31" H 11850 1650 50  0000 C CNN
@@ -2042,7 +1977,7 @@ F 3 "" H 11850 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D32
+L frkbmb28-rescue:LED D32
 U 1 1 5D61AC36
 P 12250 1550
 F 0 "D32" H 12250 1650 50  0000 C CNN
@@ -2053,7 +1988,7 @@ F 3 "" H 12250 1550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D41
+L frkbmb28-rescue:LED D41
 U 1 1 5D61AC3C
 P 9450 2050
 F 0 "D41" H 9450 2150 50  0000 C CNN
@@ -2064,7 +1999,7 @@ F 3 "" H 9450 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D42
+L frkbmb28-rescue:LED D42
 U 1 1 5D61AC42
 P 9850 2050
 F 0 "D42" H 9850 2150 50  0000 C CNN
@@ -2075,7 +2010,7 @@ F 3 "" H 9850 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D43
+L frkbmb28-rescue:LED D43
 U 1 1 5D61AC48
 P 10250 2050
 F 0 "D43" H 10250 2150 50  0000 C CNN
@@ -2086,7 +2021,7 @@ F 3 "" H 10250 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D44
+L frkbmb28-rescue:LED D44
 U 1 1 5D61AC4E
 P 10650 2050
 F 0 "D44" H 10650 2150 50  0000 C CNN
@@ -2097,7 +2032,7 @@ F 3 "" H 10650 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D45
+L frkbmb28-rescue:LED D45
 U 1 1 5D61AC54
 P 11050 2050
 F 0 "D45" H 11050 2150 50  0000 C CNN
@@ -2108,7 +2043,7 @@ F 3 "" H 11050 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D46
+L frkbmb28-rescue:LED D46
 U 1 1 5D61AC5A
 P 11450 2050
 F 0 "D46" H 11450 2150 50  0000 C CNN
@@ -2119,7 +2054,7 @@ F 3 "" H 11450 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D47
+L frkbmb28-rescue:LED D47
 U 1 1 5D61AC60
 P 11850 2050
 F 0 "D47" H 11850 2150 50  0000 C CNN
@@ -2130,7 +2065,7 @@ F 3 "" H 11850 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D48
+L frkbmb28-rescue:LED D48
 U 1 1 5D61AC66
 P 12250 2050
 F 0 "D48" H 12250 2150 50  0000 C CNN
@@ -2141,7 +2076,7 @@ F 3 "" H 12250 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D57
+L frkbmb28-rescue:LED D57
 U 1 1 5D61AC6C
 P 9450 2550
 F 0 "D57" H 9450 2650 50  0000 C CNN
@@ -2152,7 +2087,7 @@ F 3 "" H 9450 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D58
+L frkbmb28-rescue:LED D58
 U 1 1 5D61AC72
 P 9850 2550
 F 0 "D58" H 9850 2650 50  0000 C CNN
@@ -2163,7 +2098,7 @@ F 3 "" H 9850 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D59
+L frkbmb28-rescue:LED D59
 U 1 1 5D61AC78
 P 10250 2550
 F 0 "D59" H 10250 2650 50  0000 C CNN
@@ -2174,7 +2109,7 @@ F 3 "" H 10250 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D60
+L frkbmb28-rescue:LED D60
 U 1 1 5D61AC7E
 P 10650 2550
 F 0 "D60" H 10650 2650 50  0000 C CNN
@@ -2185,7 +2120,7 @@ F 3 "" H 10650 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D61
+L frkbmb28-rescue:LED D61
 U 1 1 5D61AC84
 P 11050 2550
 F 0 "D61" H 11050 2650 50  0000 C CNN
@@ -2196,7 +2131,7 @@ F 3 "" H 11050 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D62
+L frkbmb28-rescue:LED D62
 U 1 1 5D61AC8A
 P 11450 2550
 F 0 "D62" H 11450 2650 50  0000 C CNN
@@ -2207,7 +2142,7 @@ F 3 "" H 11450 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D63
+L frkbmb28-rescue:LED D63
 U 1 1 5D61AC90
 P 11850 2550
 F 0 "D63" H 11850 2650 50  0000 C CNN
@@ -2218,7 +2153,7 @@ F 3 "" H 11850 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D64
+L frkbmb28-rescue:LED D64
 U 1 1 5D61AC96
 P 12250 2550
 F 0 "D64" H 12250 2650 50  0000 C CNN
@@ -2229,7 +2164,7 @@ F 3 "" H 12250 2550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D73
+L frkbmb28-rescue:LED D73
 U 1 1 5D61AC9C
 P 9450 3050
 F 0 "D73" H 9450 3150 50  0000 C CNN
@@ -2240,7 +2175,7 @@ F 3 "" H 9450 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D74
+L frkbmb28-rescue:LED D74
 U 1 1 5D61ACA2
 P 9850 3050
 F 0 "D74" H 9850 3150 50  0000 C CNN
@@ -2251,7 +2186,7 @@ F 3 "" H 9850 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D75
+L frkbmb28-rescue:LED D75
 U 1 1 5D61ACA8
 P 10250 3050
 F 0 "D75" H 10250 3150 50  0000 C CNN
@@ -2262,7 +2197,7 @@ F 3 "" H 10250 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D76
+L frkbmb28-rescue:LED D76
 U 1 1 5D61ACAE
 P 10650 3050
 F 0 "D76" H 10650 3150 50  0000 C CNN
@@ -2273,7 +2208,7 @@ F 3 "" H 10650 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D77
+L frkbmb28-rescue:LED D77
 U 1 1 5D61ACB4
 P 11050 3050
 F 0 "D77" H 11050 3150 50  0000 C CNN
@@ -2284,7 +2219,7 @@ F 3 "" H 11050 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D78
+L frkbmb28-rescue:LED D78
 U 1 1 5D61ACBA
 P 11450 3050
 F 0 "D78" H 11450 3150 50  0000 C CNN
@@ -2295,7 +2230,7 @@ F 3 "" H 11450 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D79
+L frkbmb28-rescue:LED D79
 U 1 1 5D61ACC0
 P 11850 3050
 F 0 "D79" H 11850 3150 50  0000 C CNN
@@ -2306,7 +2241,7 @@ F 3 "" H 11850 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D80
+L frkbmb28-rescue:LED D80
 U 1 1 5D61ACC6
 P 12250 3050
 F 0 "D80" H 12250 3150 50  0000 C CNN
@@ -2317,7 +2252,7 @@ F 3 "" H 12250 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D89
+L frkbmb28-rescue:LED D89
 U 1 1 5D61ACCC
 P 9450 3550
 F 0 "D89" H 9450 3650 50  0000 C CNN
@@ -2328,7 +2263,7 @@ F 3 "" H 9450 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D90
+L frkbmb28-rescue:LED D90
 U 1 1 5D61ACD2
 P 9850 3550
 F 0 "D90" H 9850 3650 50  0000 C CNN
@@ -2339,7 +2274,7 @@ F 3 "" H 9850 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D91
+L frkbmb28-rescue:LED D91
 U 1 1 5D61ACD8
 P 10250 3550
 F 0 "D91" H 10250 3650 50  0000 C CNN
@@ -2350,7 +2285,7 @@ F 3 "" H 10250 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D92
+L frkbmb28-rescue:LED D92
 U 1 1 5D61ACDE
 P 10650 3550
 F 0 "D92" H 10650 3650 50  0000 C CNN
@@ -2361,7 +2296,7 @@ F 3 "" H 10650 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D93
+L frkbmb28-rescue:LED D93
 U 1 1 5D61ACE4
 P 11050 3550
 F 0 "D93" H 11050 3650 50  0000 C CNN
@@ -2372,7 +2307,7 @@ F 3 "" H 11050 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D94
+L frkbmb28-rescue:LED D94
 U 1 1 5D61ACEA
 P 11450 3550
 F 0 "D94" H 11450 3650 50  0000 C CNN
@@ -2383,7 +2318,7 @@ F 3 "" H 11450 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D95
+L frkbmb28-rescue:LED D95
 U 1 1 5D61ACF0
 P 11850 3550
 F 0 "D95" H 11850 3650 50  0000 C CNN
@@ -2394,7 +2329,7 @@ F 3 "" H 11850 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D96
+L frkbmb28-rescue:LED D96
 U 1 1 5D61ACF6
 P 12250 3550
 F 0 "D96" H 12250 3650 50  0000 C CNN
@@ -2405,7 +2340,7 @@ F 3 "" H 12250 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D105
+L frkbmb28-rescue:LED D105
 U 1 1 5D61ACFC
 P 9450 4050
 F 0 "D105" H 9450 4150 50  0000 C CNN
@@ -2416,7 +2351,7 @@ F 3 "" H 9450 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D106
+L frkbmb28-rescue:LED D106
 U 1 1 5D61AD02
 P 9850 4050
 F 0 "D106" H 9850 4150 50  0000 C CNN
@@ -2427,7 +2362,7 @@ F 3 "" H 9850 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D107
+L frkbmb28-rescue:LED D107
 U 1 1 5D61AD08
 P 10250 4050
 F 0 "D107" H 10250 4150 50  0000 C CNN
@@ -2438,7 +2373,7 @@ F 3 "" H 10250 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D108
+L frkbmb28-rescue:LED D108
 U 1 1 5D61AD0E
 P 10650 4050
 F 0 "D108" H 10650 4150 50  0000 C CNN
@@ -2449,7 +2384,7 @@ F 3 "" H 10650 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D109
+L frkbmb28-rescue:LED D109
 U 1 1 5D61AD14
 P 11050 4050
 F 0 "D109" H 11050 4150 50  0000 C CNN
@@ -2460,7 +2395,7 @@ F 3 "" H 11050 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D110
+L frkbmb28-rescue:LED D110
 U 1 1 5D61AD1A
 P 11450 4050
 F 0 "D110" H 11450 4150 50  0000 C CNN
@@ -2471,7 +2406,7 @@ F 3 "" H 11450 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D111
+L frkbmb28-rescue:LED D111
 U 1 1 5D61AD20
 P 11850 4050
 F 0 "D111" H 11850 4150 50  0000 C CNN
@@ -2482,7 +2417,7 @@ F 3 "" H 11850 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D112
+L frkbmb28-rescue:LED D112
 U 1 1 5D61AD26
 P 12250 4050
 F 0 "D112" H 12250 4150 50  0000 C CNN
@@ -2493,7 +2428,7 @@ F 3 "" H 12250 4050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D121
+L frkbmb28-rescue:LED D121
 U 1 1 5D61AD2C
 P 9450 4550
 F 0 "D121" H 9450 4650 50  0000 C CNN
@@ -2504,7 +2439,7 @@ F 3 "" H 9450 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D122
+L frkbmb28-rescue:LED D122
 U 1 1 5D61AD32
 P 9850 4550
 F 0 "D122" H 9850 4650 50  0000 C CNN
@@ -2515,7 +2450,7 @@ F 3 "" H 9850 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D123
+L frkbmb28-rescue:LED D123
 U 1 1 5D61AD38
 P 10250 4550
 F 0 "D123" H 10250 4650 50  0000 C CNN
@@ -2526,7 +2461,7 @@ F 3 "" H 10250 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D124
+L frkbmb28-rescue:LED D124
 U 1 1 5D61AD3E
 P 10650 4550
 F 0 "D124" H 10650 4650 50  0000 C CNN
@@ -2537,7 +2472,7 @@ F 3 "" H 10650 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D125
+L frkbmb28-rescue:LED D125
 U 1 1 5D61AD44
 P 11050 4550
 F 0 "D125" H 11050 4650 50  0000 C CNN
@@ -2548,7 +2483,7 @@ F 3 "" H 11050 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D126
+L frkbmb28-rescue:LED D126
 U 1 1 5D61AD4A
 P 11450 4550
 F 0 "D126" H 11450 4650 50  0000 C CNN
@@ -2559,7 +2494,7 @@ F 3 "" H 11450 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D127
+L frkbmb28-rescue:LED D127
 U 1 1 5D61AD50
 P 11850 4550
 F 0 "D127" H 11850 4650 50  0000 C CNN
@@ -2570,7 +2505,7 @@ F 3 "" H 11850 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D128
+L frkbmb28-rescue:LED D128
 U 1 1 5D61AD56
 P 12250 4550
 F 0 "D128" H 12250 4650 50  0000 C CNN
@@ -2581,7 +2516,7 @@ F 3 "" H 12250 4550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D137
+L frkbmb28-rescue:LED D137
 U 1 1 5D61AD5C
 P 9450 5050
 F 0 "D137" H 9450 5150 50  0000 C CNN
@@ -2592,7 +2527,7 @@ F 3 "" H 9450 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D138
+L frkbmb28-rescue:LED D138
 U 1 1 5D61AD62
 P 9850 5050
 F 0 "D138" H 9850 5150 50  0000 C CNN
@@ -2603,7 +2538,7 @@ F 3 "" H 9850 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D139
+L frkbmb28-rescue:LED D139
 U 1 1 5D61AD68
 P 10250 5050
 F 0 "D139" H 10250 5150 50  0000 C CNN
@@ -2614,7 +2549,7 @@ F 3 "" H 10250 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D140
+L frkbmb28-rescue:LED D140
 U 1 1 5D61AD6E
 P 10650 5050
 F 0 "D140" H 10650 5150 50  0000 C CNN
@@ -2625,7 +2560,7 @@ F 3 "" H 10650 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D141
+L frkbmb28-rescue:LED D141
 U 1 1 5D61AD74
 P 11050 5050
 F 0 "D141" H 11050 5150 50  0000 C CNN
@@ -2636,7 +2571,7 @@ F 3 "" H 11050 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D142
+L frkbmb28-rescue:LED D142
 U 1 1 5D61AD7A
 P 11450 5050
 F 0 "D142" H 11450 5150 50  0000 C CNN
@@ -2647,7 +2582,7 @@ F 3 "" H 11450 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D143
+L frkbmb28-rescue:LED D143
 U 1 1 5D61AD80
 P 11850 5050
 F 0 "D143" H 11850 5150 50  0000 C CNN
@@ -2658,7 +2593,7 @@ F 3 "" H 11850 5050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D144
+L frkbmb28-rescue:LED D144
 U 1 1 5D61AD86
 P 12250 5050
 F 0 "D144" H 12250 5150 50  0000 C CNN
@@ -2687,28 +2622,28 @@ CB8
 Text Label 8800 4900 2    60   ~ 0
 CB9
 Wire Wire Line
-	8800 900  12250 900 
+	8800 900  9250 900 
 Connection ~ 11850 900 
 Connection ~ 11450 900 
 Connection ~ 11050 900 
 Connection ~ 10650 900 
 Connection ~ 10250 900 
 Wire Wire Line
-	8800 1400 12250 1400
+	8800 1400 9450 1400
 Wire Wire Line
-	8800 1900 12250 1900
+	8800 1900 9450 1900
 Wire Wire Line
-	8800 2400 12250 2400
+	8800 2400 9450 2400
 Wire Wire Line
-	8800 2900 12250 2900
+	8800 2900 9450 2900
 Wire Wire Line
-	8800 3400 12250 3400
+	8800 3400 9450 3400
 Wire Wire Line
-	8800 3900 12250 3900
+	8800 3900 9450 3900
 Wire Wire Line
-	8800 4400 12250 4400
+	8800 4400 9450 4400
 Wire Wire Line
-	8800 4900 12450 4900
+	8800 4900 9450 4900
 Connection ~ 11850 4900
 Connection ~ 11450 4900
 Connection ~ 11050 4900
@@ -2770,7 +2705,7 @@ Connection ~ 9450 4900
 Wire Wire Line
 	9450 1700 9250 1700
 Wire Wire Line
-	9250 900  9250 5200
+	9250 900  9250 1700
 Connection ~ 9250 900 
 Wire Wire Line
 	9250 2200 9450 2200
@@ -2796,7 +2731,7 @@ Connection ~ 9250 4700
 Wire Wire Line
 	9450 1200 9650 1200
 Wire Wire Line
-	9650 1200 9650 5200
+	9650 1200 9650 1400
 Connection ~ 9650 1400
 Wire Wire Line
 	9650 2200 9850 2200
@@ -2821,7 +2756,7 @@ Connection ~ 9650 4700
 Wire Wire Line
 	9850 1200 10050 1200
 Wire Wire Line
-	10050 1200 10050 5200
+	10050 1200 10050 1700
 Wire Wire Line
 	10050 5200 10250 5200
 Wire Wire Line
@@ -2830,7 +2765,7 @@ Connection ~ 10050 1700
 Wire Wire Line
 	10250 1200 10450 1200
 Wire Wire Line
-	10450 1200 10450 5200
+	10450 1200 10450 1700
 Wire Wire Line
 	10450 5200 10650 5200
 Wire Wire Line
@@ -2857,7 +2792,7 @@ Connection ~ 10050 4700
 Wire Wire Line
 	10650 1200 10850 1200
 Wire Wire Line
-	10850 1200 10850 5200
+	10850 1200 10850 1700
 Wire Wire Line
 	10850 5200 11050 5200
 Wire Wire Line
@@ -2884,7 +2819,7 @@ Connection ~ 10450 4700
 Wire Wire Line
 	11050 1200 11250 1200
 Wire Wire Line
-	11250 1200 11250 5200
+	11250 1200 11250 1700
 Wire Wire Line
 	11250 5200 11450 5200
 Wire Wire Line
@@ -2911,7 +2846,7 @@ Connection ~ 10850 4700
 Wire Wire Line
 	11450 1200 11650 1200
 Wire Wire Line
-	11650 1200 11650 5200
+	11650 1200 11650 1700
 Wire Wire Line
 	11650 5200 11850 5200
 Wire Wire Line
@@ -2922,9 +2857,6 @@ Wire Wire Line
 Connection ~ 11650 2200
 Wire Wire Line
 	11450 2700 11650 2700
-Wire Wire Line
-	11650 2700 11650 2750
-Connection ~ 11650 2750
 Wire Wire Line
 	11450 3200 11650 3200
 Connection ~ 11650 3200
@@ -2940,7 +2872,7 @@ Connection ~ 11250 4700
 Wire Wire Line
 	11850 1200 12050 1200
 Wire Wire Line
-	12050 1200 12050 5200
+	12050 1200 12050 1700
 Wire Wire Line
 	12050 5200 12250 5200
 Wire Wire Line
@@ -2967,7 +2899,7 @@ Connection ~ 11650 4700
 Wire Wire Line
 	12250 1200 12450 1200
 Wire Wire Line
-	12450 1200 12450 4900
+	12450 1200 12450 1700
 Connection ~ 12250 4900
 Wire Wire Line
 	12250 4700 12450 4700
@@ -2997,7 +2929,7 @@ Connection ~ 11250 3400
 Connection ~ 11650 3900
 Connection ~ 12050 4400
 $Comp
-L CONN_01X20 P2
+L frkbmb28-rescue:CONN_01X20 P2
 U 1 1 5D630EC6
 P 3800 11400
 F 0 "P2" H 3800 12450 50  0000 C CNN
@@ -3012,39 +2944,6 @@ Wire Wire Line
 Connection ~ 3300 10750
 Wire Wire Line
 	3600 11350 3100 11350
-Connection ~ 3100 11350
-Connection ~ 4750 900 
-Connection ~ 4150 850 
-Connection ~ 4150 950 
-Connection ~ 4150 1050
-Connection ~ 4150 1150
-Connection ~ 4150 1250
-Connection ~ 4150 1350
-Connection ~ 4150 1450
-Connection ~ 4150 1550
-Connection ~ 4150 1650
-Connection ~ 900  1450
-Connection ~ 900  1550
-Connection ~ 900  1650
-Connection ~ 900  1750
-Connection ~ 900  1850
-Connection ~ 4750 1400
-Connection ~ 4750 1900
-Connection ~ 4750 2400
-Connection ~ 4750 2900
-Connection ~ 4750 3400
-Connection ~ 4750 3900
-Connection ~ 4750 4400
-Connection ~ 4750 4900
-Connection ~ 8800 900 
-Connection ~ 8800 1400
-Connection ~ 8800 1900
-Connection ~ 8800 2400
-Connection ~ 8800 2900
-Connection ~ 8800 3400
-Connection ~ 8800 3900
-Connection ~ 8800 4400
-Connection ~ 8800 4900
 Text Label 3100 11350 2    60   ~ 0
 AUD
 Wire Wire Line
@@ -3065,15 +2964,6 @@ Wire Wire Line
 	3950 2500 4150 2500
 Wire Wire Line
 	3950 2600 4150 2600
-Connection ~ 4150 1800
-Connection ~ 4150 1900
-Connection ~ 4150 2000
-Connection ~ 4150 2100
-Connection ~ 4150 2200
-Connection ~ 4150 2300
-Connection ~ 4150 2400
-Connection ~ 4150 2500
-Connection ~ 4150 2600
 Text Label 4150 1800 0    60   ~ 0
 CB9
 Text Label 4150 1900 0    60   ~ 0
@@ -3093,4 +2983,584 @@ CB2
 Text Label 4150 2600 0    60   ~ 0
 CB1
 Connection ~ 1200 1750
+Wire Wire Line
+	2000 1150 2150 1150
+Wire Wire Line
+	2200 8200 2300 8200
+Wire Wire Line
+	2100 8550 3050 8550
+Wire Wire Line
+	2300 8650 3150 8650
+Wire Wire Line
+	4450 8600 4450 8700
+Wire Wire Line
+	4450 8700 4450 8850
+Wire Wire Line
+	4450 8850 4450 9000
+Wire Wire Line
+	4750 8200 5100 8200
+Wire Wire Line
+	3050 6550 3550 6550
+Wire Wire Line
+	4550 6550 4600 6550
+Wire Wire Line
+	3300 10650 3300 10750
+Wire Wire Line
+	2000 850  2550 850 
+Wire Wire Line
+	1850 850  2000 850 
+Wire Wire Line
+	1850 1150 2000 1150
+Wire Wire Line
+	2150 1050 2150 950 
+Wire Wire Line
+	1400 1550 900  1550
+Wire Wire Line
+	1200 1450 900  1450
+Wire Wire Line
+	1200 1050 1400 1050
+Wire Wire Line
+	1000 1650 2550 1650
+Wire Wire Line
+	2000 2350 2000 2450
+Wire Wire Line
+	7800 900  8200 900 
+Wire Wire Line
+	7400 900  7800 900 
+Wire Wire Line
+	7000 900  7400 900 
+Wire Wire Line
+	6600 900  7000 900 
+Wire Wire Line
+	6200 900  6600 900 
+Wire Wire Line
+	7800 4900 8200 4900
+Wire Wire Line
+	7400 4900 7800 4900
+Wire Wire Line
+	7000 4900 7400 4900
+Wire Wire Line
+	6600 4900 7000 4900
+Wire Wire Line
+	6200 4900 6600 4900
+Wire Wire Line
+	5800 4900 6200 4900
+Wire Wire Line
+	5800 4400 6200 4400
+Wire Wire Line
+	6200 4400 6600 4400
+Wire Wire Line
+	6600 4400 7000 4400
+Wire Wire Line
+	7000 4400 7400 4400
+Wire Wire Line
+	7400 4400 7800 4400
+Wire Wire Line
+	7800 4400 8000 4400
+Wire Wire Line
+	7800 3900 8200 3900
+Wire Wire Line
+	7400 3900 7600 3900
+Wire Wire Line
+	7000 3900 7400 3900
+Wire Wire Line
+	6600 3900 7000 3900
+Wire Wire Line
+	6200 3900 6600 3900
+Wire Wire Line
+	5800 3900 6200 3900
+Wire Wire Line
+	7800 3400 8200 3400
+Wire Wire Line
+	7400 3400 7800 3400
+Wire Wire Line
+	7000 3400 7200 3400
+Wire Wire Line
+	6600 3400 7000 3400
+Wire Wire Line
+	6200 3400 6600 3400
+Wire Wire Line
+	5800 3400 6200 3400
+Wire Wire Line
+	5800 2900 6200 2900
+Wire Wire Line
+	6200 2900 6600 2900
+Wire Wire Line
+	6600 2900 6800 2900
+Wire Wire Line
+	7000 2900 7400 2900
+Wire Wire Line
+	7400 2900 7800 2900
+Wire Wire Line
+	7800 2900 8200 2900
+Wire Wire Line
+	7800 2400 8200 2400
+Wire Wire Line
+	7400 2400 7800 2400
+Wire Wire Line
+	7000 2400 7400 2400
+Wire Wire Line
+	6600 2400 7000 2400
+Wire Wire Line
+	6200 2400 6400 2400
+Wire Wire Line
+	5800 2400 6200 2400
+Wire Wire Line
+	5800 1900 6000 1900
+Wire Wire Line
+	6200 1900 6600 1900
+Wire Wire Line
+	6600 1900 7000 1900
+Wire Wire Line
+	7000 1900 7400 1900
+Wire Wire Line
+	7400 1900 7800 1900
+Wire Wire Line
+	7800 1900 8200 1900
+Wire Wire Line
+	7800 1400 8200 1400
+Wire Wire Line
+	7400 1400 7800 1400
+Wire Wire Line
+	7000 1400 7400 1400
+Wire Wire Line
+	6600 1400 7000 1400
+Wire Wire Line
+	6200 1400 6600 1400
+Wire Wire Line
+	5800 1400 6200 1400
+Wire Wire Line
+	5800 900  6200 900 
+Wire Wire Line
+	5400 900  5800 900 
+Wire Wire Line
+	5400 1400 5600 1400
+Wire Wire Line
+	5400 1900 5800 1900
+Wire Wire Line
+	5400 2400 5800 2400
+Wire Wire Line
+	5400 2900 5800 2900
+Wire Wire Line
+	5400 3400 5800 3400
+Wire Wire Line
+	5400 3900 5800 3900
+Wire Wire Line
+	5400 4400 5800 4400
+Wire Wire Line
+	5400 4900 5800 4900
+Wire Wire Line
+	5200 900  5400 900 
+Wire Wire Line
+	5200 1700 5200 2200
+Wire Wire Line
+	5200 2200 5200 2700
+Wire Wire Line
+	5200 2700 5200 3200
+Wire Wire Line
+	5200 3200 5200 3700
+Wire Wire Line
+	5200 3700 5200 4200
+Wire Wire Line
+	5200 4200 5200 4700
+Wire Wire Line
+	5200 4700 5200 5200
+Wire Wire Line
+	5600 1400 5600 2200
+Wire Wire Line
+	5600 1400 5800 1400
+Wire Wire Line
+	5600 2200 5600 2700
+Wire Wire Line
+	5600 2700 5600 3200
+Wire Wire Line
+	5600 3200 5600 3700
+Wire Wire Line
+	5600 3700 5600 4200
+Wire Wire Line
+	5600 4200 5600 4700
+Wire Wire Line
+	5600 4700 5600 5200
+Wire Wire Line
+	6000 1700 6000 1900
+Wire Wire Line
+	6400 1700 6400 2200
+Wire Wire Line
+	6400 2200 6400 2400
+Wire Wire Line
+	6000 2700 6000 3200
+Wire Wire Line
+	6000 3200 6000 3700
+Wire Wire Line
+	6000 3700 6000 4200
+Wire Wire Line
+	6000 4200 6000 4700
+Wire Wire Line
+	6000 4700 6000 5200
+Wire Wire Line
+	6800 1700 6800 2200
+Wire Wire Line
+	6800 2200 6800 2700
+Wire Wire Line
+	6800 2700 6800 2900
+Wire Wire Line
+	6400 3200 6400 3700
+Wire Wire Line
+	6400 3700 6400 4200
+Wire Wire Line
+	6400 4200 6400 4700
+Wire Wire Line
+	6400 4700 6400 5200
+Wire Wire Line
+	7200 1700 7200 2200
+Wire Wire Line
+	7200 2200 7200 2700
+Wire Wire Line
+	7200 2700 7200 3200
+Wire Wire Line
+	7200 3200 7200 3400
+Wire Wire Line
+	6800 3700 6800 4200
+Wire Wire Line
+	6800 4200 6800 4700
+Wire Wire Line
+	6800 4700 6800 5200
+Wire Wire Line
+	7600 1700 7600 2200
+Wire Wire Line
+	7600 3200 7600 3700
+Wire Wire Line
+	7600 3700 7600 3900
+Wire Wire Line
+	7200 4200 7200 4700
+Wire Wire Line
+	7200 4700 7200 5200
+Wire Wire Line
+	8000 1700 8000 2200
+Wire Wire Line
+	8000 2200 8000 2700
+Wire Wire Line
+	8000 2700 8000 3200
+Wire Wire Line
+	8000 3200 8000 3700
+Wire Wire Line
+	8000 3700 8000 4200
+Wire Wire Line
+	8000 4200 8000 4400
+Wire Wire Line
+	7600 4700 7600 5200
+Wire Wire Line
+	8200 4900 8400 4900
+Wire Wire Line
+	8400 4700 8400 4900
+Wire Wire Line
+	8400 4200 8400 4700
+Wire Wire Line
+	8400 3700 8400 4200
+Wire Wire Line
+	8400 3200 8400 3700
+Wire Wire Line
+	8400 2700 8400 3200
+Wire Wire Line
+	8400 2200 8400 2700
+Wire Wire Line
+	8400 1700 8400 2200
+Wire Wire Line
+	6000 1900 6200 1900
+Wire Wire Line
+	6000 1900 6000 2700
+Wire Wire Line
+	6400 2400 6600 2400
+Wire Wire Line
+	6400 2400 6400 3200
+Wire Wire Line
+	6800 2900 7000 2900
+Wire Wire Line
+	6800 2900 6800 3700
+Wire Wire Line
+	7200 3400 7400 3400
+Wire Wire Line
+	7200 3400 7200 4200
+Wire Wire Line
+	7600 3900 7800 3900
+Wire Wire Line
+	7600 3900 7600 4700
+Wire Wire Line
+	8000 4400 8200 4400
+Wire Wire Line
+	8000 4400 8000 5200
+Wire Wire Line
+	11850 900  12250 900 
+Wire Wire Line
+	11450 900  11850 900 
+Wire Wire Line
+	11050 900  11450 900 
+Wire Wire Line
+	10650 900  11050 900 
+Wire Wire Line
+	10250 900  10650 900 
+Wire Wire Line
+	11850 4900 12250 4900
+Wire Wire Line
+	11450 4900 11850 4900
+Wire Wire Line
+	11050 4900 11450 4900
+Wire Wire Line
+	10650 4900 11050 4900
+Wire Wire Line
+	10250 4900 10650 4900
+Wire Wire Line
+	9850 4900 10250 4900
+Wire Wire Line
+	9850 4400 10250 4400
+Wire Wire Line
+	10250 4400 10650 4400
+Wire Wire Line
+	10650 4400 11050 4400
+Wire Wire Line
+	11050 4400 11450 4400
+Wire Wire Line
+	11450 4400 11850 4400
+Wire Wire Line
+	11850 4400 12050 4400
+Wire Wire Line
+	11850 3900 12250 3900
+Wire Wire Line
+	11450 3900 11650 3900
+Wire Wire Line
+	11050 3900 11450 3900
+Wire Wire Line
+	10650 3900 11050 3900
+Wire Wire Line
+	10250 3900 10650 3900
+Wire Wire Line
+	9850 3900 10250 3900
+Wire Wire Line
+	11850 3400 12250 3400
+Wire Wire Line
+	11450 3400 11850 3400
+Wire Wire Line
+	11050 3400 11250 3400
+Wire Wire Line
+	10650 3400 11050 3400
+Wire Wire Line
+	10250 3400 10650 3400
+Wire Wire Line
+	9850 3400 10250 3400
+Wire Wire Line
+	9850 2900 10250 2900
+Wire Wire Line
+	10250 2900 10650 2900
+Wire Wire Line
+	10650 2900 10850 2900
+Wire Wire Line
+	11050 2900 11450 2900
+Wire Wire Line
+	11450 2900 11850 2900
+Wire Wire Line
+	11850 2900 12250 2900
+Wire Wire Line
+	11850 2400 12250 2400
+Wire Wire Line
+	11450 2400 11850 2400
+Wire Wire Line
+	11050 2400 11450 2400
+Wire Wire Line
+	10650 2400 11050 2400
+Wire Wire Line
+	10250 2400 10450 2400
+Wire Wire Line
+	9850 2400 10250 2400
+Wire Wire Line
+	9850 1900 10050 1900
+Wire Wire Line
+	10250 1900 10650 1900
+Wire Wire Line
+	10650 1900 11050 1900
+Wire Wire Line
+	11050 1900 11450 1900
+Wire Wire Line
+	11450 1900 11850 1900
+Wire Wire Line
+	11850 1900 12250 1900
+Wire Wire Line
+	11850 1400 12250 1400
+Wire Wire Line
+	11450 1400 11850 1400
+Wire Wire Line
+	11050 1400 11450 1400
+Wire Wire Line
+	10650 1400 11050 1400
+Wire Wire Line
+	10250 1400 10650 1400
+Wire Wire Line
+	9850 1400 10250 1400
+Wire Wire Line
+	9850 900  10250 900 
+Wire Wire Line
+	9450 900  9850 900 
+Wire Wire Line
+	9450 1400 9650 1400
+Wire Wire Line
+	9450 1900 9850 1900
+Wire Wire Line
+	9450 2400 9850 2400
+Wire Wire Line
+	9450 2900 9850 2900
+Wire Wire Line
+	9450 3400 9850 3400
+Wire Wire Line
+	9450 3900 9850 3900
+Wire Wire Line
+	9450 4400 9850 4400
+Wire Wire Line
+	9450 4900 9850 4900
+Wire Wire Line
+	9250 900  9450 900 
+Wire Wire Line
+	9250 1700 9250 2200
+Wire Wire Line
+	9250 2200 9250 2700
+Wire Wire Line
+	9250 2700 9250 3200
+Wire Wire Line
+	9250 3200 9250 3700
+Wire Wire Line
+	9250 3700 9250 4200
+Wire Wire Line
+	9250 4200 9250 4700
+Wire Wire Line
+	9250 4700 9250 5200
+Wire Wire Line
+	9650 1400 9650 2200
+Wire Wire Line
+	9650 1400 9850 1400
+Wire Wire Line
+	9650 2200 9650 2700
+Wire Wire Line
+	9650 2700 9650 3200
+Wire Wire Line
+	9650 3200 9650 3700
+Wire Wire Line
+	9650 3700 9650 4200
+Wire Wire Line
+	9650 4200 9650 4700
+Wire Wire Line
+	9650 4700 9650 5200
+Wire Wire Line
+	10050 1700 10050 1900
+Wire Wire Line
+	10450 1700 10450 2200
+Wire Wire Line
+	10450 2200 10450 2400
+Wire Wire Line
+	10050 2700 10050 3200
+Wire Wire Line
+	10050 3200 10050 3700
+Wire Wire Line
+	10050 3700 10050 4200
+Wire Wire Line
+	10050 4200 10050 4700
+Wire Wire Line
+	10050 4700 10050 5200
+Wire Wire Line
+	10850 1700 10850 2200
+Wire Wire Line
+	10850 2200 10850 2700
+Wire Wire Line
+	10850 2700 10850 2900
+Wire Wire Line
+	10450 3200 10450 3700
+Wire Wire Line
+	10450 3700 10450 4200
+Wire Wire Line
+	10450 4200 10450 4700
+Wire Wire Line
+	10450 4700 10450 5200
+Wire Wire Line
+	11250 1700 11250 2200
+Wire Wire Line
+	11250 2200 11250 2700
+Wire Wire Line
+	11250 2700 11250 3200
+Wire Wire Line
+	11250 3200 11250 3400
+Wire Wire Line
+	10850 3700 10850 4200
+Wire Wire Line
+	10850 4200 10850 4700
+Wire Wire Line
+	10850 4700 10850 5200
+Wire Wire Line
+	11650 1700 11650 2200
+Wire Wire Line
+	11650 3200 11650 3700
+Wire Wire Line
+	11650 3700 11650 3900
+Wire Wire Line
+	11250 4200 11250 4700
+Wire Wire Line
+	11250 4700 11250 5200
+Wire Wire Line
+	12050 1700 12050 2200
+Wire Wire Line
+	12050 2200 12050 2700
+Wire Wire Line
+	12050 2700 12050 3200
+Wire Wire Line
+	12050 3200 12050 3700
+Wire Wire Line
+	12050 3700 12050 4200
+Wire Wire Line
+	12050 4200 12050 4400
+Wire Wire Line
+	11650 4700 11650 5200
+Wire Wire Line
+	12250 4900 12450 4900
+Wire Wire Line
+	12450 4700 12450 4900
+Wire Wire Line
+	12450 4200 12450 4700
+Wire Wire Line
+	12450 3700 12450 4200
+Wire Wire Line
+	12450 3200 12450 3700
+Wire Wire Line
+	12450 2700 12450 3200
+Wire Wire Line
+	12450 2200 12450 2700
+Wire Wire Line
+	12450 1700 12450 2200
+Wire Wire Line
+	10050 1900 10250 1900
+Wire Wire Line
+	10050 1900 10050 2700
+Wire Wire Line
+	10450 2400 10650 2400
+Wire Wire Line
+	10450 2400 10450 3200
+Wire Wire Line
+	10850 2900 11050 2900
+Wire Wire Line
+	10850 2900 10850 3700
+Wire Wire Line
+	11250 3400 11450 3400
+Wire Wire Line
+	11250 3400 11250 4200
+Wire Wire Line
+	11650 3900 11850 3900
+Wire Wire Line
+	11650 3900 11650 4700
+Wire Wire Line
+	12050 4400 12250 4400
+Wire Wire Line
+	12050 4400 12050 5200
+Wire Wire Line
+	3300 10750 3300 10850
+Wire Wire Line
+	1200 1750 2550 1750
+Wire Wire Line
+	7600 2200 7600 3200
+Wire Wire Line
+	11650 2200 11650 3200
 $EndSCHEMATC

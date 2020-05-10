@@ -20,6 +20,7 @@ const char rm_flvr_rfciphr1[] = 	"The walls turn to brushed steel, the room is s
 const char rm_flvr_rfciphr2[] = 	"It looks a lot like the previous room, but more clutter. There's scrap metal all over the floor and file cabinets pressed against the walls.";
 
 //Room item lists
+struct itm* rm_rfciphr1_itms[1];
 struct itm* rm_rfciphr2_itms[1];
 //Room object lists
 struct obj* rm_startroom_objs[1];
@@ -55,11 +56,12 @@ void InitRooms(){
 	rm_rfciphr1.down_room = NULL;
 	rm_rfciphr1.name = rm_name_rfciphr1;
 	rm_rfciphr1.flavortext = rm_flvr_rfciphr1;
-	rm_rfciphr1.items = NULL;
+	rm_rfciphr1.items = rm_rfciphr1_itms;
 	rm_rfciphr1.objects = NULL;
-	rm_rfciphr1.item_count = 0;
+	rm_rfciphr1.item_count = 1;
 	rm_rfciphr1.object_count = 0;
 	rm_rfciphr1.token = RTKN_RFCIPHR1;
+	rm_rfciphr1_itms[0] = GetItmByToken(LTKN_ITM_TPAPER1);
 
 	//Init the Rail Fence Cipher Room2
 	rm_rfciphr2.north_room = NULL;
@@ -70,11 +72,12 @@ void InitRooms(){
 	rm_rfciphr2.down_room = NULL;
 	rm_rfciphr2.name = rm_name_rfciphr2;
 	rm_rfciphr2.flavortext = rm_flvr_rfciphr2;
-	rm_rfciphr2.items = NULL;
+	rm_rfciphr2.items = rm_rfciphr2_itms;
 	rm_rfciphr2.objects = NULL;
-	rm_rfciphr2.item_count = 0;
+	rm_rfciphr2.item_count = 1;
 	rm_rfciphr2.object_count = 0;
 	rm_rfciphr2.token = RTKN_RFCIPHR2;
+	rm_rfciphr2_itms[0] = GetItmByToken(LTKN_ITM_TPAPER2);
 
 }
 

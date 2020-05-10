@@ -23,6 +23,7 @@
 #define LTKN_ACT_HELP		0x0A
 #define LTKN_ACT_INVENTORY	0x0B
 #define LTKN_ACT_EXAMINE	0x0C
+
 //Noun tokens (0x10 to 0x1F)
 //Nav directions
 #define LTKN_NAVD_NORTH		0x10
@@ -39,12 +40,13 @@
 #define LTKN_OBJ_STRTDIAL	0x20
 
 //Items (0x50 to 0x7F)
-#define LTKN_ITM_TEST		0x50
-#define LTKN_ITM_TEST1		0x51
-#define LTKN_ITM_TEST2		0x52
+#define LTKN_ITM_PAPER		0x50
+#define LTKN_ITM_TPAPER1	0x51
+#define LTKN_ITM_TPAPER2	0x52
+#define LTKN_ITM_TOTEM		0x53
 
 //Commands (0x80 to 0xAF)
-#define LTKN_CMD_TEST		0x80
+#define LTKN_CMD_YGDRSL		0x80
 
 uint8_t game_tokens[MAX_TOKENS];
 

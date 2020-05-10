@@ -309,14 +309,14 @@ void MixItems(){
 
 void MixItemsMixer(struct itm* itm1, struct itm* itm2){
 	//Mix testitm1 and testitm2 together to make a testitm
-	if(((itm1->token == LTKN_ITM_TEST1) && (itm2->token == LTKN_ITM_TEST2)) ||
-	   ((itm1->token == LTKN_ITM_TEST2) && (itm2->token == LTKN_ITM_TEST1))){
+	if(((itm1->token == LTKN_ITM_TPAPER1) && (itm2->token == LTKN_ITM_TPAPER2)) ||
+	   ((itm1->token == LTKN_ITM_TPAPER2) && (itm2->token == LTKN_ITM_TPAPER1))){
 		//Remove the two items from player inventory
 		itm1->state = ITM_USED_UP;
 		itm2->state = ITM_USED_UP;
 		//Put testitm in the players inventory
-		GetItmByToken(LTKN_ITM_TEST)->state = ITM_IN_INVENTORY;
-		PrintToConsole("The testitm1 and testitm2 fuse together to make a testitm.\0");
+		GetItmByToken(LTKN_ITM_PAPER)->state = ITM_IN_INVENTORY;
+		PrintToConsole("You match up the tear marks on the slips of paper to make a full sheet of paper (paper).\0");
 		return;
 	}
 	else{
