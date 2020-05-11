@@ -62,3 +62,25 @@ int life(uint8_t x, uint8_t y){
 	}
 
 }
+
+void conway_demo(I2C_HandleTypeDef* hi2c){
+	stop_conway = 0;
+	// Seed Conway's game of life with a glider
+	next_fbuf[0 * MTX_WIDTH + 1] = 0xFF;
+	next_fbuf[1 * MTX_WIDTH + 2] = 0xFF;
+	next_fbuf[2 * MTX_WIDTH + 0] = 0xFF;
+	next_fbuf[2 * MTX_WIDTH + 1] = 0xFF;
+	next_fbuf[2 * MTX_WIDTH + 2] = 0xFF;
+	update_fbuf(hi2c);
+	while (!stop_conway){
+		for(uint8_t y = 0; y < 18; y++){
+			for(uint8_t x = 0; x < 8; x++){
+				if(life(x, y)){
+					next_fbuf[y * MTX_WIDTH + x] = 0xFF;
+				}
+			}
+		}
+		HAL_Delay(100);
+		update_fbuf(hi2c);
+	}
+}

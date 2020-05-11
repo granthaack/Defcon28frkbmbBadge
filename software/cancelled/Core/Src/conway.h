@@ -7,6 +7,7 @@
 #define Y_BND 17
 
 uint8_t* active_fbuf;
+volatile uint8_t stop_conway;
 int life(uint8_t x, uint8_t y);
-
+void conway_demo(I2C_HandleTypeDef* hi2c);
 #endif
