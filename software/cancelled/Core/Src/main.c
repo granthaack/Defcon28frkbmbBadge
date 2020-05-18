@@ -27,6 +27,7 @@
 #include "conway.h"
 #include "random.h"
 #include "rotate.h"
+#include "doggo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,7 +102,7 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
   init_matrix(&hi2c1);
-
+  init_accel(&hi2c1);
   /* USER CODE END 2 */
  
  
@@ -113,8 +114,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  rotate_demo(&hi2c1);
+	  doggo_demo(&hi2c1);
 	  conway_demo(&hi2c1);
+	  rotate_demo(&hi2c1);
+
   }
   /* USER CODE END 3 */
 }

@@ -1,0 +1,6 @@
+accel.c:3:5:init_accel	40	static
+accel.c:21:10:_get_16bit_reg	40	static
+accel.c:37:10:get_x	16	static
+accel.c:41:10:get_y	16	static
+accel.c:44:10:get_z	16	static
+accel.c:47:10:get_temp	16	static
