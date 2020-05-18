@@ -1,4 +1,4 @@
-(module IS31FL3731C (layer F.Cu) (tedit 5D5518AE)
+(module IS31FL3731 (layer F.Cu) (tedit 5D5518AE)
   (fp_text reference U1 (at 0 -3.6) (layer F.SilkS)
     (effects (font (size 1.2 1.2) (thickness 0.15)))
   )

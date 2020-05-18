@@ -1,4 +1,3 @@
 (sym_lib_table
-  (lib (name doggo)(type Legacy)(uri /home/ghaack/projects/Defcon28frkbmbBadge/board/doggo/doggo.lib)(options "")(descr ""))
-  (lib (name frkbmb28)(type Legacy)(uri /home/ghaack/projects/Defcon28frkbmbBadge/board/doggo/frkbmb28.lib)(options "")(descr ""))
+  (lib (name doggo)(type Legacy)(uri ${KIPRJMOD}/doggo.lib)(options "")(descr ""))
 )
