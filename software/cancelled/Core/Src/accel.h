@@ -10,6 +10,10 @@
 #define Z_DATA_REG		0x2C
 #define TMPTR_DATA_REG	0x0B
 
+// Notes to self
+// Look into BDU (block data update) on the LIS12. Might be important
+// X, Y, Z registers might be twos complement? Temperature is for sure
+
 int init_accel(I2C_HandleTypeDef* i2c);
 uint16_t get_x(I2C_HandleTypeDef* i2c);
 uint16_t get_y(I2C_HandleTypeDef* i2c);
