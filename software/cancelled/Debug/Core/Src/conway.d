@@ -25,8 +25,6 @@ Core/Src/conway.o: ../Core/Src/conway.c ../Core/Src/conway.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h \
  ../Core/Src/matrix.h
 
 ../Core/Src/conway.h:
@@ -82,9 +80,5 @@ Core/Src/conway.o: ../Core/Src/conway.c ../Core/Src/conway.h \
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
-
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h:
-
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h:
 
 ../Core/Src/matrix.h:
