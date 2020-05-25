@@ -1,7 +1,6 @@
 #include "rotate.h"
 
 
-
 void rotate_demo(I2C_HandleTypeDef* hi2c){
 	const uint8_t cube_bmp0[81] = {
 			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -69,7 +68,7 @@ void rotate_demo(I2C_HandleTypeDef* hi2c){
 			0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x00, 0x00,
 			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	};
-
+	/*
 	struct img cube;
 	cube.bitmap = cube_bmp0;
 	cube.width = 9;
@@ -98,13 +97,7 @@ void rotate_demo(I2C_HandleTypeDef* hi2c){
 		draw_image(&cube, hi2c);
 		HAL_Delay(100);
 	}
+	*/
 }
 
-void draw_image(struct img* image, I2C_HandleTypeDef* hi2c){
-	for(uint8_t y = 0; y < image->height; y++){
-		for(uint8_t x = 0; x < image->width; x++){
-			next_fbuf[((y + image->y) * MTX_WIDTH) + (x + image->x)] =  image->bitmap[(y * image->width) + x];
-		}
-	}
-	update_fbuf(hi2c);
-}
+

@@ -25,7 +25,7 @@ Core/Src/doggo.o: ../Core/Src/doggo.c ../Core/Src/doggo.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- ../Core/Src/matrix.h ../Core/Src/accel.h
+ ../Core/Src/matrix.h ../Core/Src/accel.h ../Core/Src/img.h
 
 ../Core/Src/doggo.h:
 
@@ -84,3 +84,5 @@ Core/Src/doggo.o: ../Core/Src/doggo.c ../Core/Src/doggo.h \
 ../Core/Src/matrix.h:
 
 ../Core/Src/accel.h:
+
+../Core/Src/img.h:

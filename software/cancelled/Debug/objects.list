@@ -1,6 +1,7 @@
 "Core/Src/accel.o"
 "Core/Src/conway.o"
 "Core/Src/doggo.o"
+"Core/Src/img.o"
 "Core/Src/main.o"
 "Core/Src/matrix.o"
 "Core/Src/random.o"

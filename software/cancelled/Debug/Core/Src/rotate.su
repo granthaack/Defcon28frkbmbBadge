@@ -1,2 +1,1 @@
-rotate.c:5:6:rotate_demo	536	static
-rotate.c:103:6:draw_image	32	static
+rotate.c:4:6:rotate_demo	16	static
